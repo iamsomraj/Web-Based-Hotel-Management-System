@@ -1,6 +1,22 @@
-<?php
-    session_start();
 
+<?php
+        
+session_start();
+
+
+
+if(isset($_SESSION["isformfill"]))
+{
+    if(($_SESSION["isformfill"]) == 2)
+    {
+
+?>
+
+
+<?php
+
+
+    $_SESSION["finalise"] = "false";
     $name=$_SESSION['name'];
     $email=$_SESSION['email'];
     $contact=$_SESSION['contact'];
@@ -12,26 +28,58 @@
     $price=$_SESSION['price'];
     $pay=$_SESSION['pay'];
     $id=null;
-    
-    $con=mysqli_connect("localhost","root","");
-    $db=mysqli_select_db($con,"hilton");
-    $sql="insert into booking values('$id','$name','$email','$contact','$address','$roomtype','$checkin','$checkout','$noofdays','$price','$pay')";
-    $result=mysqli_query($con,$sql);
+    include("connection.php");
+        
+    $query="insert into booking values('$id','$name','$email','$contact','$address','$roomtype','$checkin','$checkout','$noofdays','$price','$pay')";
+    $result=mysqli_query($link,$query);
+    $databaselog = "";
     if($con)
-            {
-                echo "<p class='success'>"."Connected"."</p>";
-                if($result)
-                {
-                    echo "<p class='success'>"."Data Inserted"."</p>";
-                }
-            }
-                else
-            {
-                echo "<p class='message'>"."Not Connected"."</p>";
-            }
-    if(!$result)
     {
-        echo die(mysqli_error($con));
+        
+                $databaselog .= "<p>Connection Success!</p>";
+
     }
-    session_destroy();
+    else
+    {
+                $databaselog .= "<p>Connection Failed!</p>";
+                header("location:prebook.php");
+
+    }
+    if($result)
+    {
+            $_SESSION["isformfill"]++;
+
+            header("location:confirmbook.php");
+    }
+    else
+    {
+            $databaselog .= "<p>Data is not inserted!</p>";
+            header("location:prebook.php");
+
+
+    }
+        
+        
 ?>
+
+
+<?php
+        
+            }
+    else
+    {
+        header("index.php");
+    }
+
+
+}
+else
+{
+    header("index.php");
+}
+
+
+
+
+?>
+
