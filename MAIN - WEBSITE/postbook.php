@@ -1,3 +1,65 @@
+<?php
+    session_start();
+    if(isset($_SESSION['isformfill']))
+    {
+        
+            if($_SESSION['isformfill'] == 1)
+            {
+
+?>
+
+
+<?php
+                
+    $name=$_SESSION['name'];
+    $email=$_SESSION['email'];
+    $contact=$_SESSION['contact'];
+    $address=$_SESSION['address'];
+    $roomtype=$_SESSION['roomtype'];
+    $checkin=$_SESSION['checkin'];
+    $checkout=$_SESSION['checkout'];
+    
+
+                
+    function numberofdays ( $firstdate, $lastdate )
+    {
+        $checkin = date_create($firstdate);
+        $checkout = date_create($lastdate);
+        $diff=date_diff($checkin,$checkout);
+        $n = $diff->format('%d');
+        return $n;
+    }
+                
+    
+    $noofdays=numberofdays($checkin,$checkout);
+                
+    
+    $pay="";
+    $price="4500";
+    if(isset($_POST['submit'])){
+        $pay=trim($_POST['pay']);
+
+        if($roomtype=="select") {
+                $error="Error : You Did Not Select Any Payment Option!";
+                $code=10;
+        }
+        else
+            {
+                $_SESSION['name']=$name;
+                $_SESSION['email']=$email;
+                $_SESSION['contact']=$contact;
+                $_SESSION['address']=$address;
+                $_SESSION['roomtype']=$roomtype;
+                $_SESSION['checkin']=$checkin;
+                $_SESSION['checkout']=$checkout;
+                $_SESSION['noofdays']=$noofdays;
+                $_SESSION['price']=$price; 
+                $_SESSION['pay']=$pay;
+                $_SESSION["isformfill"]++;
+                header('location:DatabaseInsertion.php');
+            }
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -27,22 +89,22 @@
     <link rel="stylesheet" href="assets/css/Pretty-Header.css">
 </head>
 
-<body style="background-color:#fcf3c1;">
-    <nav class="navbar navbar-light navbar-expand-md sticky-top" style="background-color:#ffffff;">
-        <div class="container-fluid"><a class="navbar-brand" href="#">HotelName</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+
+<body style="background-color:#fcf3c1;" data-spy="scroll" data-target="#navbar-e" data-offset="300">
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navbar-e" style="background-color:#ffffff;">
+        <div class="container-fluid"><a class="navbar-brand" href="index.php">Hilton</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-2">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">First Item</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Second Item</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Third Item</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.php#gallery">Gallery</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.php#testimonial">Testimonials</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.php#team">Team</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div></div>
-    <div class="container" style="background-color:#fcf3c1;">
-        <form action="#" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
             <div class="form-group">
                 <p></p>
             </div>
@@ -56,62 +118,91 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
+                    <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><input class="form-control form-control-lg" type="text" name="name" value="Firstname Lastname" disabled="" readonly="" placeholder="Full Name"></div>
+                    <div class="col">
+                        
+                    <?php 
+                    
+                        
+                        if(isset($_POST["submit"]) and isset($error))
+
+                            {
+                            
+                            echo "<div class=\"alert alert-danger\" role=\"alert\">$error</div>"; 
+                            }
+                        
+                        
+                    ?>
+
+                        
+ 
+                    
+                    
+                    </div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><input class="form-control form-control-lg" type="text" name="email" value="useremail@email.com" disabled="" readonly="" placeholder="Email Address"></div>
+                    <div class="col"><input class="form-control form-control-lg" type="text" name="name" value="<?php echo "$name"; ?>" disabled="" readonly="" placeholder="Full Name"></div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><input class="form-control form-control-lg" type="text" name="contact" value="9999999999" disabled="" readonly="" placeholder="Contact Number"></div>
+                    <div class="col"><input class="form-control form-control-lg" type="text" name="email" value="<?php echo "$email"; ?>" disabled="" readonly="" placeholder="Email Address"></div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><input class="form-control form-control-lg" type="text" name="address" value="Kolkata" disabled="" readonly="" placeholder="Home Town / City"></div>
+                    <div class="col"><input class="form-control form-control-lg" type="text" name="contact" value="<?php echo "$contact"; ?>" disabled="" readonly="" placeholder="Contact Number"></div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><input class="form-control form-control-lg" type="text" name="roomtype" value="Superior Room" disabled="" readonly="" placeholder="Type of Room"></div>
+                    <div class="col"><input class="form-control form-control-lg" type="text" name="address" value="<?php echo "$address"; ?>" disabled="" readonly="" placeholder="Home Town / City"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col"><input class="form-control form-control-lg" type="text" name="roomtype" value="<?php echo "Type Of Room - "."$roomtype"; ?>" disabled="" readonly="" placeholder="Type of Room"></div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
                     <div class="col-6"><input class="form-control form-control-lg" type="text" value="Checkin" disabled="" readonly="" placeholder="Checkin"></div>
-                    <div class="col-6"><input class="form-control form-control-lg" type="text" name="checkin" value="10-10-2018" disabled="" readonly="" placeholder="dd-mm-yyyy"></div>
+                    <div class="col-6"><input class="form-control form-control-lg" type="text" name="checkin" value="<?php echo "$checkin"; ?>" disabled="" readonly="" placeholder="dd-mm-yyyy"></div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
                     <div class="col-6"><input class="form-control form-control-lg" type="text" value="Checkout" disabled="" readonly="" placeholder="Checkout"></div>
-                    <div class="col-6"><input class="form-control form-control-lg" type="text" name="checkout" value="15-10-2018" disabled="" readonly="" placeholder="dd-mm-yyyy"></div>
+                    <div class="col-6"><input class="form-control form-control-lg" type="text" name="checkout" value="<?php echo "$checkout"; ?>" disabled="" readonly="" placeholder="dd-mm-yyyy"></div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><input class="form-control form-control-lg" type="text" name="noofdays" value="Number Of Days - 5" disabled="" readonly="" placeholder="Number of Days"></div>
+                    <div class="col"><input class="form-control form-control-lg" type="text" name="noofdays" value="<?php echo "No Of Days - "."$noofdays"; ?>" disabled="" readonly="" placeholder="Number of Days"></div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
                     <div class="col-6"><input class="form-control form-control-lg" type="text" value="Payment ₹ " disabled="" readonly="" placeholder="Payment ₹"></div>
-                    <div class="col-6"><input class="form-control form-control-lg" type="text" name="price" value="4500.00" disabled="" readonly="" placeholder="0000.00"></div>
+                    <div class="col-6"><input class="form-control form-control-lg" type="text" name="price" value="<?php echo "$price"; ?>" disabled="" readonly="" placeholder="0000.00"></div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><select class="form-control form-control-lg"><option value="" selected="">Select Payment Method</option><option value="paynow">Pay Now</option><option value="paylater">Pay Later</option></select></div>
+                    <div class="col"><select class="form-control form-control-lg" name="pay">
+                        <option value="select" selected="">Select Payment Method</option>
+                        <option value="Pay Now" <?php if(isset($pay) && $pay=="Pay Now"){echo 'selected="selected"';}?>>Pay Now</option>
+                        <option value="Pay Later" <?php if(isset($pay) && $pay=="Pay Later"){echo 'selected="selected"';}?>>Pay Later</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><button class="btn btn-primary btn-lg" type="submit">Book</button></div>
+                    <div class="col"><button class="btn btn-primary btn-lg" name="submit" type="submit">Book</button></div>
                     <div class="col"><button class="btn btn-danger btn-lg" type="submit">Cancel</button></div>
                 </div>
             </div>
@@ -153,3 +244,23 @@
 </body>
 
 </html>
+
+
+<?php
+
+
+                
+            }
+            else
+            {
+                header("location:prebook.php");
+            }
+    }
+    else
+    {
+        header("location:prebook.php");
+    }
+?>
+
+
+?>

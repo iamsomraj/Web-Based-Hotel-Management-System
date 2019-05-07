@@ -1,3 +1,81 @@
+<?php
+    session_start();
+    $_SESSION["isformfill"] = 0;
+
+    $name=$email=$contact=$address=$roomtype=$checkin=$checkout="";
+
+    if(isset($_POST['submit'])){
+        $name=trim($_POST['name']);
+        $email=trim($_POST['email']);
+        $contact=trim($_POST['contact']);
+        $address=trim($_POST['address']);
+        $roomtype=trim($_POST['roomtype']);
+        $checkin=$_POST["checkin"];
+        $checkout=$_POST["checkout"];
+      
+        if($name==""){
+            $error="Error : You Did Not Enter Your Name!";
+            $code=1;
+        }
+            
+        elseif($email==""){
+            $error="Error : You Did Not Enter Your Email ID!";
+            $code=2;
+        }
+        
+         elseif(!preg_match("/^(\w+[\-\.])*\w+@(\w+\.)+[A-Za-z]+$/",$email)){
+            $error="Error : You Did Not Enter Correct Email Address!";
+            $code=2;
+        }
+        
+        elseif($contact==""){
+            $error="Error : You Did Not Enter Your Contact Number!";
+            $code=3;
+        }
+        
+        elseif(!preg_match("/^\d{10}$/",$contact)){
+            $error="Error : You Did Not Enter Contact Number In 10 Digits!";
+            $code=3;
+        }
+        elseif($address==""){
+            $error="Error : You Did Not Enter Your Address";
+            $code=4;
+        }
+        
+        elseif($roomtype=="select"){
+            $error="Error : You Did Not Select Any Type Of Room!";
+            $code=5;
+        }
+        
+        else
+        {
+                    echo $name;
+        echo "</br>";
+        echo $email;
+        echo "</br>";
+        echo $contact;          
+        echo "</br>";
+        echo $address;
+        echo "</br>";
+        echo $roomtype;
+        echo "</br>";
+        echo $checkin;
+        echo "</br>";
+        echo $checkout;
+        echo "</br>";
+            $_SESSION['name']=$name;
+            $_SESSION['email']=$email;
+            $_SESSION['contact']=$contact;
+            $_SESSION['address']=$address;
+            $_SESSION['roomtype']=$roomtype;
+            $_SESSION['checkin']=$checkin;
+            $_SESSION['checkout']=$checkout;
+            $_SESSION["isformfill"]++;
+            header('location:postbook.php');
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -27,22 +105,24 @@
     <link rel="stylesheet" href="assets/css/Pretty-Header.css">
 </head>
 
-<body style="background-color:#fcf3c1;">
-    <nav class="navbar navbar-light navbar-expand-md sticky-top" style="background-color:#ffffff;">
-        <div class="container-fluid"><a class="navbar-brand" href="#">HotelName</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+
+    
+
+<body style="background-color:#fcf3c1;" data-spy="scroll" data-target="#navbar-e" data-offset="300">
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navbar-e" style="background-color:#ffffff;">
+        <div class="container-fluid"><a class="navbar-brand" href="index.php">Hilton</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-2">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">First Item</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Second Item</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Third Item</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.php#gallery">Gallery</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.php#testimonial">Testimonials</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.php#team">Team</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div></div>
-    <div class="container" style="background-color:#fcf3c1;">
-        <form action="#" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
             <div class="form-group">
                 <p></p>
             </div>
@@ -58,27 +138,59 @@
             </div>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><input class="form-control form-control-lg" type="text" name="name" placeholder="Full Name"></div>
+                    <div class="col">
+                        
+                    <?php 
+                    
+                        
+                        if(isset($_POST["submit"]) and isset($error))
+
+                            {
+                            
+                            echo "<div class=\"alert alert-danger\" role=\"alert\">$error</div>"; 
+                            }
+                        
+                        
+                    ?>
+
+                        
+ 
+                    
+                    
+                    </div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><input class="form-control form-control-lg" type="text" name="email" placeholder="Email Address"></div>
+                    <div class="col"><input class="form-control form-control-lg" type="text" name="name" placeholder="Full Name" value="<?php if(isset($name)){echo $name;}?>"<?php if(isset($code) && $code==1){echo "class=error";}?>></div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><input class="form-control form-control-lg" type="text" name="contact" placeholder="Contact Number"></div>
+                    <div class="col"><input class="form-control form-control-lg" type="text" name="email" placeholder="Email Address" value="<?php if(isset($email)){echo $email;}?>"<?php if(isset($code) && $code==2){echo "class=error";}?>></div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><input class="form-control form-control-lg" type="text" name="address" placeholder="Home Town / City"></div>
+                    <div class="col"><input class="form-control form-control-lg" type="text" name="contact" placeholder="Contact Number" value="<?php if(isset($contact)){echo $contact;}?>"<?php if(isset($code) && $code==3){echo "class=error";}?>></div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><select class="form-control form-control-lg"><option value="" selected="">Select Room Type</option><option value="biggest">Superior - 4 persons</option><option value="big">Deluxe - 3 persons</option><option value="medium">Semi Deluxe - 2 persons</option><option value="small">Saver - 1 person</option></select></div>
+                    <div class="col"><input class="form-control form-control-lg" type="text" name="address" placeholder="Home Town / City" value="<?php if(isset($address)){echo $address;}?>"<?php if(isset($code) && $code==4){echo "class=error";}?>></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col">
+                        <select class="form-control form-control-lg" name="roomtype">
+                            <option value="select" selected="">Select Room Type</option>
+                            <option value="Superior" <?php if(isset($roomtype) && $roomtype=="biggest"){echo 'selected="selected"';}?>>Superior - 4 persons</option>
+                            <option value="Deluxe" <?php if(isset($roomtype) && $roomtype=="big"){echo 'selected="selected"';}?>>Deluxe - 3 persons</option>
+                            <option value="Semi Deluxe" <?php if(isset($roomtype) && $roomtype=="medium"){echo 'selected="selected"';}?>>Semi Deluxe - 2 persons</option>
+                            <option value="Saver" <?php if(isset($roomtype) && $roomtype=="small"){echo 'selected="selected"';}?>>Saver - 1 person</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -95,7 +207,7 @@
             </div>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col"><button class="btn btn-success btn-lg" type="submit">Submit</button></div>
+                    <div class="col"><button class="btn btn-success btn-lg" name="submit" type="submit">Submit</button></div>
                     <div class="col"><button class="btn btn-danger btn-lg" type="reset">Reset</button></div>
                 </div>
             </div>
