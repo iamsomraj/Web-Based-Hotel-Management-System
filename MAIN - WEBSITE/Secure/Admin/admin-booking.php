@@ -41,13 +41,13 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light" style="background-color:#ffffff;">
+<nav class="navbar navbar-light navbar-expand-md sticky-top bg-light" style="background-color:#ffffff;">
         <div class="container-fluid"><a class="navbar-brand" href="#">Admin Panel</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-2">
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-home.php">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="admin-booking.php">Booking</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-booking.php">Booking</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-history.php">History</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-rooms.php">Rooms</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-finance.php">Finance</a></li>
@@ -57,9 +57,11 @@
         </div>
     </nav>
     
+    
+    
     <div class="container">
         
-               </br>
+        </br>
         <div class="display-4 text-center text-capitalize">Bookings</div>
         </br>
          <table class="table table-striped table-dark">
@@ -72,13 +74,15 @@
             </tr>
           </thead>
           <tbody>
+      
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>    
+              
+              <tr>
               <th scope="row">2</th>
               <td>Jacob</td>
               <td>Thornton</td>

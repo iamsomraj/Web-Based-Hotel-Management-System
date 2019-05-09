@@ -45,7 +45,7 @@
                 id="navcol-2">
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-home.php">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="admin-booking.php">Booking</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-booking.php">Booking</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-history.php">History</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-rooms.php">Rooms</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-finance.php">Finance</a></li>
@@ -54,6 +54,8 @@
                 </ul><button class="btn btn-primary ml-auto" type="submit">Log Out</button></div>
         </div>
     </nav>
+    
+    
     <div class="container"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>

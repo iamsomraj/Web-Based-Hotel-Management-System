@@ -5,12 +5,18 @@
         
             if($_SESSION['isformfill'] == 1)
             {
+                
+                if(isset($_POST["cancel"]))
+                {
+                    header("location:prebook.php");
+                }
 
 ?>
 
 
 <?php
-                
+    $flag=0;
+    $error="";            
     $name=$_SESSION['name'];
     $email=$_SESSION['email'];
     $contact=$_SESSION['contact'];
@@ -26,45 +32,71 @@
         $checkin = date_create($firstdate);
         $checkout = date_create($lastdate);
         $diff=date_diff($checkin,$checkout);
-        $n = $diff->format('%d');
-        return $n;
+        $d = $diff->format('%d');
+        $m = $diff->format('%m');
+        return array($d,$m);
+ 
     }
                 
-    
-    $noofdays=numberofdays($checkin,$checkout);
+    $noofdays=numberofdays($checkin,$checkout)[0];
+    $noofmonths=numberofdays($checkin,$checkout)[1];
+
+    $price="";        
                 
+        
+            if($noofdays == 0) {
+                    $error ="Error : Invalid date!";
+                    $noofdays="INVALID";
+                    $price="INVALID";
+                    $flag=1;
+            }
+             elseif($noofmonths > 0){
+                $error="Error : Invalid Month!";
+                $noofdays="INVALID";
+                $price="INVALID";
+                $flag=1;
+            }
     
     $pay="";
-    if($roomtype!="select")
+    if($roomtype!="select" && $price!="INVALID")
     {
         if($roomtype=="Superior")
         {
-            $price=10000;
+            $price=14500 * $noofdays;
         }
         else if($roomtype=="Deluxe")
         {
-            $price=7500;
+            $price=10500 * $noofdays;
         }
         else if($roomtype=="Semi Deluxe")
         {
-            $price=5000;
+            $price=7500 * $noofdays;
         }
         else if($roomtype=="Saver")
         {
-            $price=2500;
+            $price=5500 * $noofdays;
         }
     }
-    if(isset($_POST['submit'])){
-        $pay=trim($_POST['pay']);
 
-        if($roomtype=="select") {
-                $error="Error : You Did Not Select Any Payment Option!";
-                $code=10;
+    if(isset($_POST['submit']) )
+    {
+        if($noofdays == "INVALID" or $noofmonths == "INVALID")
+        {
+            header("location:prebook.php");
         }
-         elseif($pay=="select"){
-            $error="Error : You Did Not Select Any Payment Method!";
-            $code=11;
-        }
+        else
+        {
+            $pay=trim($_POST['pay']);
+        
+       
+            if($roomtype=="select") {
+                    $error="Error : You Did Not Select Any Payment Option!";
+                    $code=10;
+            }
+             elseif($pay=="select"){
+                $error="Error : You Did Not Select Any Payment Method!";
+                $code=11;
+            }
         else
             {
                 $_SESSION['name']=$name;
@@ -80,6 +112,9 @@
                 $_SESSION["isformfill"]++;
                 header('location:DatabaseInsertion.php');
             }
+        }
+
+   
     }
 ?>
 <!DOCTYPE html>
@@ -147,7 +182,7 @@
                     <?php 
                     
                         
-                        if(isset($_POST["submit"]) and isset($error))
+                        if((isset(($_POST["submit"])) and isset($error)) || ($flag==1))
 
                             {
                             
@@ -225,7 +260,7 @@
             <div class="form-group">
                 <div class="form-row">
                     <div class="col"><button class="btn btn-primary btn-lg" name="submit" type="submit">Book</button></div>
-                    <div class="col"><button class="btn btn-danger btn-lg" type="submit">Cancel</button></div>
+                    <div class="col"><button class="btn btn-danger btn-lg" name="cancel" type="submit">Cancel</button></div>
                 </div>
             </div>
         </form>

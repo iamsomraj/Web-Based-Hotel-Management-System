@@ -6,11 +6,17 @@
             if($_SESSION['isformfill'] == 1)
             {
 
+                  if(isset($_POST["cancel"]))
+                {
+                    header("location:prebook.php");
+                }
+
 ?>
 
 
 <?php
-                
+    $flag=0;
+    $error="";            
     $name=$_SESSION['name'];
     $email=$_SESSION['email'];
     $contact=$_SESSION['contact'];
@@ -26,45 +32,73 @@
         $checkin = date_create($firstdate);
         $checkout = date_create($lastdate);
         $diff=date_diff($checkin,$checkout);
-        $n = $diff->format('%d');
-        return $n;
+        $d = $diff->format('%d');
+        $m = $diff->format('%m');
+        return array($d,$m);
+ 
     }
                 
-    
-    $noofdays=numberofdays($checkin,$checkout);
+    $noofdays=numberofdays($checkin,$checkout)[0];
+    $noofmonths=numberofdays($checkin,$checkout)[1];
+
+    $price="";        
                 
+        
+            if($noofdays == 0) {
+                    $error ="Error : Invalid date!";
+                    $noofdays="INVALID";
+                    $price="INVALID";
+                    $flag=1;
+            }
+             elseif($noofmonths > 0){
+                $error="Error : Invalid Month!";
+                $noofdays="INVALID";
+                $price="INVALID";
+                $flag=1;
+            }
     
     $pay="";
-    if($roomtype!="select")
+    if($roomtype!="select" && $price!="INVALID")
     {
         if($roomtype=="Superior")
         {
-            $price=10000;
+            $price=14500 * $noofdays;
         }
         else if($roomtype=="Deluxe")
         {
-            $price=7500;
+            $price=10500 * $noofdays;
         }
         else if($roomtype=="Semi Deluxe")
         {
-            $price=5000;
+            $price=7500 * $noofdays;
         }
         else if($roomtype=="Saver")
         {
-            $price=2500;
+            $price=5500 * $noofdays;
         }
     }
-    if(isset($_POST['submit'])){
-        $pay=trim($_POST['pay']);
-
-        if($roomtype=="select") {
-                $error="Error : You Did Not Select Any Payment Option!";
-                $code=10;
+                
+                
+                
+    if(isset($_POST['submit']) )
+    {
+        if($noofdays == "INVALID" or $noofmonths == "INVALID")
+        {
+            header("location:prebook.php");
         }
-         elseif($pay=="select"){
-            $error="Error : You Did Not Select Any Payment Method!";
-            $code=11;
-        }
+        else
+        {
+            $pay=trim($_POST['pay']);
+        
+       
+            if($roomtype=="select") {
+                    $error="Error : You Did Not Select Any Payment Option!";
+                    $code=10;
+            }
+             elseif($pay=="select"){
+                $error="Error : You Did Not Select Any Payment Method!";
+                $code=11;
+            }
         else
             {
                 $_SESSION['name']=$name;
@@ -80,7 +114,12 @@
                 $_SESSION["isformfill"]++;
                 header('location:DatabaseInsertion.php');
             }
+        }
+
+   
     }
+
+  
 ?>
 <!DOCTYPE html>
 <html>
@@ -113,16 +152,19 @@
 
 
 <body style="background-color:#fcf3c1;" data-spy="scroll" data-target="#navbar-e" data-offset="300">
-    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="navbar-e" style="background-color:#ffffff;">
-        <div class="container-fluid"><a class="navbar-brand" href="index.php">Hilton</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+<nav class="navbar navbar-light navbar-expand-md sticky-top bg-light" style="background-color:#ffffff;">
+        <div class="container-fluid"><a class="navbar-brand" href="#">Admin Panel</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-2">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.php#gallery">Gallery</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.php#testimonial">Testimonials</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.php#team">Team</a></li>
-                </ul>
-            </div>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-home.php">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-booking.php">Booking</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-history.php">History</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-rooms.php">Rooms</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-finance.php">Finance</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="prebook.php">Reservation</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-admin.php">Admins</a></li>
+                </ul><button class="btn btn-primary ml-auto" type="submit">Log Out</button></div>
         </div>
     </nav>
     <div></div>
@@ -140,14 +182,16 @@
                     </div>
                 </div>
             </div>
-                    <div class="form-group">
+            
+            
+            <div class="form-group">
                 <div class="form-row">
                     <div class="col">
                         
                     <?php 
                     
                         
-                        if(isset($_POST["submit"]) and isset($error))
+                        if((isset(($_POST["submit"])) and isset($error)) || ($flag==1))
 
                             {
                             
@@ -155,15 +199,13 @@
                             }
                         
                         
-                    ?>
-
-                        
- 
-                    
-                    
+                    ?>    
                     </div>
                 </div>
             </div>
+            
+            
+            
             <div class="form-group">
                 <div class="form-row">
                     <div class="col"><input class="form-control form-control-lg" type="text" name="name" value="<?php echo "$name"; ?>" disabled="" readonly="" placeholder="Full Name"></div>
@@ -225,41 +267,12 @@
             <div class="form-group">
                 <div class="form-row">
                     <div class="col"><button class="btn btn-primary btn-lg" name="submit" type="submit">Book</button></div>
-                    <div class="col"><button class="btn btn-danger btn-lg" type="submit">Cancel</button></div>
+                    <div class="col"><button class="btn btn-danger btn-lg" name="cancel" type="submit">Cancel</button></div>
                 </div>
             </div>
         </form>
     </div>
-    <div class="footer-dark">
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>Services</h3>
-                        <ul>
-                            <li><a href="#">Web design</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">Hosting</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>About</h3>
-                        <ul>
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 item text">
-                        <h3>Company Name</h3>
-                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
-                    </div>
-                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
-                </div>
-                <p class="copyright">Company Name © 2017</p>
-            </div>
-        </footer>
-    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>

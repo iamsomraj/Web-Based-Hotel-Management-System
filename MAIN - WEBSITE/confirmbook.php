@@ -78,10 +78,10 @@ if(isset($_SESSION["isformfill"]))
     
     
 <div class="alert alert-success" role="alert">
+    <p class="display-4 text-center">Booking Details</p>
     <p class="lead">You Booking has been confirmed!</p>
     <?php
         
-        echo "<p class=\"lead\">Booking Details :</p>";
        
         echo "<p class=\"lead\">Name - $name</p>";
         echo "<p class=\"lead\">Email - $email</p>";
