@@ -46,13 +46,13 @@
             <div class="collapse navbar-collapse"
                 id="navcol-2">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Booking</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">History</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Rooms</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Finance</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Reservation</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Admins</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-home.php">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="admin-booking.php">Booking</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-history.php">History</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-rooms.php">Rooms</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-finance.php">Finance</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-reservation.php">Reservation</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-admin.php">Admins</a></li>
                 </ul><button class="btn btn-primary ml-auto" type="submit">Log Out</button></div>
         </div>
     </nav>
