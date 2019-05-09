@@ -1,3 +1,36 @@
+<?php
+    session_start();
+    $_SESSION["isformfill"] = 0;
+
+    $username=$password="";
+
+    if(isset($_POST['submit']))
+
+    {
+        
+        
+        $username=trim($_POST['username']);
+        $password=trim($_POST['password']);
+      
+        if($username==""){
+            $error="Error : You Did Not Enter Username!";
+            $code=1;
+        }
+            
+        elseif($password==""){
+            $error="Error : You Did Not Enter Your Password!";
+            $code=2;
+        }
+        
+        else
+        {
+            $_SESSION['username']=$username;
+            $_SESSION['password']=$password;
+            $_SESSION["isformfill"]++;
+            header('location:alogin.php');
+        }
+    }
+?>
 <!DOCTYPE html>
 <html style="background-image:url(&quot;../assets/img/background-sm.jpg&quot;);">
 
@@ -44,11 +77,25 @@
     <div class="container">
         <div class="login-card"><img src="../assets/img/avatar_2x.png" class="profile-img-card">
             <p class="profile-name-card"> </p>
-            <form class="form-signin"><span class="reauth-email"> </span><input class="form-control" type="email" name="username" required="" placeholder="Username" autofocus="" id="inputEmail"><input class="form-control" type="password" required="" placeholder="Password" id="inputPassword">
+            <form class="form-signin" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"><span class="reauth-email">
+                <?php 
+                    
+                        
+                        if(isset($_POST["submit"]) and isset($error))
+
+                            {
+                            
+                            echo "<div class=\"alert alert-danger\" role=\"alert\">$error</div>"; 
+                            }
+                        
+                        
+                    ?>
+                </span><input class="form-control" type="text" name="username" required="" placeholder="Username" autofocus="" id="inputEmail" value="<?php if(isset($username)){echo $username;}?>"<?php if(isset($code) && $code==1){echo "class=error";}?>><input class="form-control" type="password" name="password" required="" placeholder="Password" id="inputPassword" value="<?php if(isset($password)){echo $password;}?>"<?php if(isset($code) && $code==2){echo "class=error";}?>>
+
                 <div
                     class="checkbox">
                     <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"></div>
-        </div><button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Sign in</button></form>
+        </div><button class="btn btn-primary btn-block btn-lg btn-signin" type="submit" name="submit">Sign in</button></form>
     </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
