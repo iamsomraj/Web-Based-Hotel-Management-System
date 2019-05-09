@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -64,36 +65,71 @@
         </br>
         <div class="display-4 text-center text-capitalize">Bookings</div>
         </br>
+    <?php
+             include("connection.php");
+             $sql="Select * from booking";
+             $result=mysqli_query($link,$sql);
+    ?>
+     
+                  
+              
+    
+      
+             
          <table class="table table-striped table-dark">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Id</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Email Address</th>
+              <th scope="col">Contact Number</th>
+                <th scope="col">Home Town/City</th>
+              <th scope="col">Room Type</th>
+              <th scope="col">Check In</th>
+              <th scope="col">Check Out</th>
+                <th scope="col">No.of Days</th>
+              <th scope="col">Amount Payable</th>
+              <th scope="col">Payment Method</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
+             
+					
           <tbody>
-      
+              <?php
+              while($row=mysqli_fetch_array($result))
+              {
+                  
+                  $id=$row['id'];
+                   $name=$row['name'];
+                $email=$row['email'];
+                $contact=$row['contact'];
+                $address=$row['address'];
+                $roomtype=$row['roomtype'];
+                $checkin=$row['checkin'];
+                $checkout=$row['checkout'];
+                $noofdays=$row['noofdays'];
+                $payment=$row['payment']; 
+                $paymethod=$row['paymethod'];
+                  ?>
+             
             <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>    
+              <th scope="row"><?php echo $id; ?></th>
+              <td><?php echo $name; ?></td>
+              <td><?php echo $email; ?></td>
+              <td><?php echo $contact; ?></td>
+                <td><?php echo $address; ?></td>
+                <td><?php echo $roomtype; ?></td>
+                <td><?php echo $checkin; ?></td>
+                <td><?php echo $checkout; ?></td>
+                <td><?php echo $noofdays; ?></td>
+                <td><?php echo $payment; ?></td>
+                <td><?php echo $paymethod; ?></td>
+            </tr> 
+              <?php
+              }
+              ?>
               
-              <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
           </tbody>
         </table>        
     
