@@ -33,7 +33,7 @@ if(isset($_SESSION["isformfill"]))
     $query="insert into booking values('$id','$name','$email','$contact','$address','$roomtype','$checkin','$checkout','$noofdays','$price','$pay')";
     $result=mysqli_query($link,$query);
     $databaselog = "";
-    if($con)
+    if($link)
     {
         
                 $databaselog .= "<p>Connection Success!</p>";
