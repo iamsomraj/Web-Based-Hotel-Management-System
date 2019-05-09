@@ -26,6 +26,7 @@
             $_SESSION['username']=$username;
             $_SESSION['password']=$password;
             $_SESSION["isformfill"]++;
+            
             header('location:alogin.php');
         }
     }
@@ -89,6 +90,10 @@
                         
                         
                     ?>
+                <?php
+                
+                echo "Wrong Username or Password,try again!";
+                ?>
                
                 </span><input class="form-control" type="text" name="username" required="" placeholder="Username" autofocus="" id="inputEmail" value="<?php if(isset($username)){echo $username;}?>"<?php if(isset($code) && $code==1){echo "class=error";}?>><input class="form-control" type="password" name="password" required="" placeholder="Password" id="inputPassword" value="<?php if(isset($password)){echo $password;}?>"<?php if(isset($code) && $code==2){echo "class=error";}?>>
 

@@ -1,7 +1,7 @@
 <?php
         
 session_start();
-
+$count=2;
 if(isset($_SESSION["isformfill"]))
 {
     if(($_SESSION["isformfill"]) == 1)
@@ -27,7 +27,7 @@ if(isset($_SESSION["isformfill"]))
     else
     {
                 $databaselog .= "<p>Connection Failed!</p>";
-                header("location:admin-login.php");
+                header("location:admin-login-wrong.php");
 
     }
     $row=mysqli_num_rows($result);
@@ -40,9 +40,8 @@ if(isset($_SESSION["isformfill"]))
     else
     {
             $databaselog .= "<p>Data is not inserted!</p>";
-            header("location:admin-login.php");
-
-
+            header("location:admin-login-wrong.php");
+        
     }
         
         
