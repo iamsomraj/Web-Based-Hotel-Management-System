@@ -35,7 +35,7 @@ if(isset($_SESSION["isformfill"]))
     {
             echo "Logged in successfully";
             $_SESSION["isformfill"]++;
-            header("location:admin-home.html");
+            header("location:admin-home.php");
     }
     else
     {

@@ -95,7 +95,7 @@
                 <div
                     class="checkbox">
                     <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"></div>
-        </div><button class="btn btn-primary btn-block btn-lg btn-signin" type="submit" name="submit">Sign in</button></form>
+        </div><button class="btn btn-primary " type="submit" name="submit">Sign in</button></form>
     </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
