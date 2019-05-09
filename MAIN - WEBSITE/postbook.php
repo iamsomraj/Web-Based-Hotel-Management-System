@@ -35,13 +35,35 @@
                 
     
     $pay="";
-    $price="4500";
+    if($roomtype!="select")
+    {
+        if($roomtype=="Superior")
+        {
+            $price=10000;
+        }
+        else if($roomtype=="Deluxe")
+        {
+            $price=7500;
+        }
+        else if($roomtype=="Semi Deluxe")
+        {
+            $price=5000;
+        }
+        else if($roomtype=="Saver")
+        {
+            $price=2500;
+        }
+    }
     if(isset($_POST['submit'])){
         $pay=trim($_POST['pay']);
 
         if($roomtype=="select") {
                 $error="Error : You Did Not Select Any Payment Option!";
                 $code=10;
+        }
+         elseif($pay=="select"){
+            $error="Error : You Did Not Select Any Payment Method!";
+            $code=11;
         }
         else
             {

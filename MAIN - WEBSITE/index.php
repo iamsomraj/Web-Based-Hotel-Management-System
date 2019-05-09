@@ -30,7 +30,7 @@
         body
         {
             position: relative;
-            overflow: hidden;
+            overflow: scroll;
         }
         
         
@@ -54,22 +54,22 @@
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
                 <div class="jumbotron hero-nature carousel-hero">
-                    <h1 class="hero-title">Welcome to Hilton Hotel</h1>
-                    <p class="hero-subtitle">-Experience the Best of Luxury and Hospitality-  </p>
+                    <h1 class="hero-title text-capitalize">Welcome to Hilton</h1>
+                    <p class="lead hero-subtitle text-capitalize">Experience an unforgettable extended stay in the heart of Jumeirah Beach</p>
                     <p><a class="btn btn-primary btn-lg hero-button" role="button" href="prebook.php">Reservation</a></p>
                 </div>
             </div> 
             <div class="carousel-item">
                 <div class="jumbotron hero-photography carousel-hero">
-                    <h1 class="hero-title">Value and Convenience</h1>
-                    <p class="hero-subtitle">-Enjoy your Stay with our Wide Range of Rooms at Great Price -</p>
+                    <h1 class="hero-title">Pleasure and Convenience</h1>
+                    <p class="lead hero-subtitle text-capitalize">Enjoy Your stay with our Wide Range of Rooms at Great Price</p>
                     <p><a class="btn btn-primary btn-lg hero-button" role="button" href="prebook.php">Reservation</a></p>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="jumbotron hero-technology carousel-hero">
-                    <h1 class="hero-title">Luxurious Amenities and Service<br></h1>
-                    <p class="hero-subtitle">-Swift Room Services.Swimming Pools.Complimentary Wifi-</p>
+                    <h1 class="hero-title text-capitalize">Luxurious Amenities and Service<br></h1>
+                    <p class="lead hero-subtitle text-capitalize">Beautiful sea facing lounge including pool area and cafe.</p>
                     <p><a class="btn btn-primary btn-lg hero-button" role="button" href="prebook.php">Reservation</a></p>
                 </div>
             </div>
@@ -82,11 +82,19 @@
             <li data-target="#carousel-1" data-slide-to="2"></li>
             </ol>
     </div>
+    
+    
+    <div class="container" id="gallery">
+        </br>
+        </br>
+    </div>
+    
+    
     <div class="photo-gallery" id="gallery">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Gallery</h2>
-                <p class="text-center">Spacious Rooms.Ensuite Washrooms.Captivating Exterior.Luxurious and Splendid Amenities. </p>
+                <p class="lead text-center text-capitalize">Spacious and captivating range of apartments, rooms and suites with sublime interiors and exteriors aesthetics</p>
             </div>
             <div class="row photos">
                 <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/hotel8.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/hotel8.jpg"></a></div>
@@ -108,34 +116,40 @@
             </div>
         </div>
     </div>
-    <div class="testimonials-clean" id="testimonial">
+    
+    <div class="container" id="testimonial">
+        </br>
+        </br>
+    </div>
+    
+    <div class="testimonials-clean">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Testimonials</h2>
-                <p class="text-center">-Meet Our Customers Sharing Their Experience And Story For Years-</p>
+                <p class="lead text-center">Meet Our Customers Sharing Their Experience And Story For Years</p>
             </div>
             <div class="row people">
                 <div class="col-md-6 col-lg-4 item">
                     <div class="box">
-                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                        <p class="description">Great hotel with large spacious new suites & lovely views. It also has an amazing location near many facilities.</p>
                     </div>
                     <div class="author"><img class="rounded-circle" src="assets/img/1.jpg">
                         <h5 class="name">Ben Johnson</h5>
-                        <p class="title">CEO of Company Inc.</p>
+                        <p class="title">CEO of Abstract Inc.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 item">
                     <div class="box">
-                        <p class="description">Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id.</p>
+                        <p class="description">I spent a week here in February. Really impressed with the hotel and service. I was very pleased with the room which comprised a well furnished lounge area, small kitchen. </p>
                     </div>
                     <div class="author"><img class="rounded-circle" src="assets/img/3.jpg">
                         <h5 class="name">Carl Kent</h5>
-                        <p class="title">Founder of Style Co.</p>
+                        <p class="title">Founder of Illuminati Co.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 item">
                     <div class="box">
-                        <p class="description">Aliquam varius finibus est, et interdum justo suscipit. Vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p>
+                        <p class="description">This hotel is in a great location right near the beach and the hustle and bustle of the walk. So much to see and do.</p>
                     </div>
                     <div class="author"><img class="rounded-circle" src="assets/img/2.jpg">
                         <h5 class="name">Emily Clark</h5>
@@ -145,45 +159,52 @@
             </div>
         </div>
     </div>
-    <div class="team-boxed" id="team">
+    
+    <div class="container" id="team">
+        </br>
+        </br>
+    </div>
+    
+    
+    <div class="team-boxed">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Team </h2>
-                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
+                <p class="lead text-center">We're led by a team who constantly questions,tinkers and challenges to unlock great creativity around every turn</p>
             </div>
             <div class="row people">
                 <div class="col-md-6 col-lg-6 col-xl-6 item">
-                    <div class="box"><img class="rounded-circle" src="assets/img/1.jpg">
-                        <h3 class="name">Ben Johnson</h3>
-                        <p class="title">Musician</p>
-                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
-                        <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                    <div class="box"><img class="rounded-circle" src="assets/img/somraj.jpg">
+                        <h3 class="name">Somraj Mukherjee</h3>
+                        <p class="title">Lead Developer</p>
+                        <p class="description"></p>
+                        <div class="social"><!--a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a--><a href="https://instagram.com/i.somraj?utm_source=ig_profile_share&igshid=c5lypd5wu5w6"><i class="fa fa-instagram"></i></a></div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-6 item">
-                    <div class="box"><img class="rounded-circle" src="assets/img/2.jpg">
-                        <h3 class="name">Emily Clark</h3>
-                        <p class="title">Artist</p>
-                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
-                        <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                    <div class="box"><img class="rounded-circle" src="assets/img/souro.jpg">
+                        <h3 class="name">Souradip Ganguly</h3>
+                        <p class="title">Back-end Developer</p>
+                        <p class="description"></p>
+                        <div class="social"><!--a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a--><a href="https://instagram.com/souro08?utm_source=ig_profile_share&igshid=1fff4t5x0myr8"><i class="fa fa-instagram"></i></a></div>
                     </div>
                 </div>
             </div>
             <div class="row people">
                 <div class="col-md-6 col-lg-6 col-xl-6 item">
-                    <div class="box"><img class="rounded-circle" src="assets/img/1.jpg">
-                        <h3 class="name">Ben Johnson</h3>
-                        <p class="title">Musician</p>
-                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
-                        <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                    <div class="box"><img class="rounded-circle" src="assets/img/jagriti.jpg">
+                        <h3 class="name">Jagriti Chourasia</h3>
+                        <p class="title">Front-end Developer</p>
+                        <p class="description"></p>
+                        <div class="social"><!--a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a--><a href="https://instagram.com/jagriti47?utm_source=ig_profile_share&igshid=11esrgrwm5bcv"><i class="fa fa-instagram"></i></a></div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-6 item">
-                    <div class="box"><img class="rounded-circle" src="assets/img/2.jpg">
-                        <h3 class="name">Emily Clark</h3>
-                        <p class="title">Artist</p>
-                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
-                        <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                    <div class="box"><img class="rounded-circle" src="assets/img/anwesha.jpg">
+                        <h3 class="name">Anwesha Mitra</h3>
+                        <p class="title">Database Administrator</p>
+                        <p class="description"></p>
+                        <div class="social"><a href="https://m.facebook.com/anwesha.mitra.712"><i class="fa fa-facebook-official"></i></a><!--a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a--></div>
                     </div>
                 </div>
             </div>
@@ -193,32 +214,30 @@
         <footer>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>Services</h3>
-                        <ul>
-                            <li><a href="#">Web design</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">Hosting</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>About</h3>
-                        <ul>
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
+     
+                    <div class="col-sm-6 col-md-3 item text">
+                        <h3>Hotel Information</h3>
+                            <p>No Pets Are Allowed</p>
+                            <p>Visa Assistance Available</p>
+                            <p>Customizable Packages</p>
+                            <p>Over 20 Restaurants and Diner</p>
+
                     </div>
                     <div class="col-md-6 item text">
-                        <h3>Company Name</h3>
-                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                        <h3>Location</h3>
+                        <p>The Walk</p>
+                        <p>Jumeirah Beach Residence</p>
+                        <p>Post Box 2431</p>
+                        <p>Dubai,UAE</p>
                     </div>
-                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                    <!--div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div-->
                 </div>
-                <p class="copyright">Company Name © 2017</p>
+                <p class="copyright">© Copyright 2019</p>
             </div>
         </footer>
     </div>
+    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>

@@ -8,16 +8,19 @@ div.jumbotron.carousel-hero {
   margin-bottom:0;
 }
 
+
+
+
 div.jumbotron.hero-nature {
-  background-image:url('../../assets/img/hero-background-nature.jpg');
+  background-image:url('../../assets/img/actual/imageone.jpg');
 }
 
 div.jumbotron.hero-photography {
-  background-image:url('../../assets/img/hero-background-photography.jpg');
+  background-image:url('../../assets/img/actual/imagetwo.jpg');
 }
 
 div.jumbotron.hero-technology {
-  background-image:url('../../assets/img/hero-background-technology.jpg');
+  background-image:url('../../assets/img/actual/imagethree.jpg');
 }
 
 h1.hero-title, h2.hero-title, h3.hero-title {
