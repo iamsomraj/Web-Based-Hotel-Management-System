@@ -125,6 +125,15 @@
                 <td><?php echo $noofdays; ?></td>
                 <td><?php echo $payment; ?></td>
                 <td><?php echo $paymethod; ?></td>
+                
+                <th><div class="btn-group ">
+            <a class='btn btn-success btn-sm' role="button" href="#">Approve</a>
+                <a class='btn btn-danger btn-sm' role="button" href="#">Reject</a>
+                </div>	
+                </th>
+												
+                
+                
             </tr> 
               <?php
               }
