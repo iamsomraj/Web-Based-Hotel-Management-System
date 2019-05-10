@@ -96,24 +96,31 @@
                 <h2 class="text-center">Gallery</h2>
                 <p class="lead text-center text-capitalize">Spacious and captivating range of apartments, rooms and suites with sublime interiors and exteriors aesthetics</p>
             </div>
+            
+            
             <div class="row photos">
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/hotel8.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/hotel8.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/hotel6.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/hotel6.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/hotel5.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/hotel5.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/hotel7.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/hotel7.jpg"></a></div>
-            </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/Gallery/hotel%20(1).jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/Gallery/hotel%20(1).jpg"></a></div>
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/Gallery/hotel%20(2).jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/Gallery/hotel%20(2).jpg"></a></div>                
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/Gallery/hotel%20(3).jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/Gallery/hotel%20(3).jpg"></a></div>                
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/Gallery/hotel%20(4).jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/Gallery/hotel%20(4).jpg"></a></div>
+            </div>           
             <div class="row photos">
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="galley/hotel15.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/hotel15.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/hotel14.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/hotel14.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/hotel12.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/hotel12.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/hotel13.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/hotel13.jpg"></a></div>
-            </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/Gallery/hotel%20(5).jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/Gallery/hotel%20(5).jpg"></a></div>
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/Gallery/hotel%20(6).jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/Gallery/hotel%20(6).jpg"></a></div>                
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/Gallery/hotel%20(7).jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/Gallery/hotel%20(7).jpg"></a></div>                
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/Gallery/hotel%20(8).jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/Gallery/hotel%20(8).jpg"></a></div>
+            </div>           
             <div class="row photos">
-                <div class="col-sm-6 col-md-3 col-lg-3 item"><a href="assets/img/hotel22.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/hotel22.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/hotel21.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/hotel21.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/hotel25.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/hotel25.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/hotel26.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/hotel26.jpg"></a></div>
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/Gallery/hotel%20(9).jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/Gallery/hotel%20(9).jpg"></a></div>
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/Gallery/hotel%20(10).jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/Gallery/hotel%20(10).jpg"></a></div>                
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/Gallery/hotel%20(11).jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/Gallery/hotel%20(11).jpg"></a></div>                
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/Gallery/hotel%20(12).jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/Gallery/hotel%20(12).jpg"></a></div>
             </div>
+            
+            
+          
+            
+            
         </div>
     </div>
     
