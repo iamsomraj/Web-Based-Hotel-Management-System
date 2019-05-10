@@ -1,7 +1,8 @@
 <?php
     session_start();
-    $_SESSION["isformfill"] = 0;
-
+     if($_SESSION["isformfill"]!=0)
+    {
+    $_SESSION["isformfill"]=1;
     $name=$email=$contact=$address=$roomtype=$checkin=$checkout="";
 
     if(isset($_POST['submit'])){
@@ -107,7 +108,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-finance.php">Finance</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="prebook.php">Reservation</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-admin.php">Admins</a></li>
-                </ul><button class="btn btn-primary ml-auto" type="submit">Log Out</button></div>
+                </ul><button class="btn btn-primary ml-auto" type="submit"><a href="logout.php">Log Out</a></button></div>
         </div>
     </nav>
     <div></div>
@@ -208,3 +209,10 @@
 </body>
 
 </html>
+<?php
+}
+else
+    {
+        header("location:admin-login.php");
+    }
+?>

@@ -5,23 +5,8 @@
         
             if($_SESSION['isformfill'] == 2)
             {
-
-                  if(isset($_POST["submit"]))
-                {
-                    $_SESSION["isformfill"]=0;
-                    header("location:index.php");
-                }
-            }
-            else
-            {
-                header("location:index.php");
-            }
-    }
-    else
-    {
-        header("location:index.php");
-    }
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -77,7 +62,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-finance.php">Finance</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="prebook.php">Reservation</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-admin.php">Admins</a></li>
-                </ul><button class="btn btn-primary ml-auto" type="submit" name="submit"><a href="admin-login.php">Log Out</button></a></div>
+                </ul><button class="btn btn-primary ml-auto" type="submit" name="submit"><a href="logout.php">Log Out</button></a></div>
         </div>
     </nav>
     
@@ -134,6 +119,17 @@
 </body>
 
 </html>
-
+<?php
+            }
+            else
+            {
+                header("location:admin-login.php");
+            }
+    }
+    else
+    {
+        header("location:admin-login.php");
+    }
+?>
 
                 

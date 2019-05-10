@@ -2,6 +2,16 @@
     session_start();
     $_SESSION["isformfill"] = 0;
     $username=$password="";
+    $loginfail = 0;
+    
+    if(isset($_SESSION["loginfail"]))
+    {
+        if($_SESSION["loginfail"])
+        {
+            $loginfail = 1;
+            $_SESSION["loginfail"] = false;
+        }
+    }
 
     if(isset($_POST['submit']))
 
@@ -12,12 +22,12 @@
         $password=trim($_POST['password']);
       
         if($username==""){
-            $error="Error : You Did Not Enter Username!";
+            $error="You Did Not Enter Username!";
             $code=1;
         }
             
         elseif($password==""){
-            $error="Error : You Did Not Enter Your Password!";
+            $error="You Did Not Enter Your Password!";
             $code=2;
         }
         
@@ -86,11 +96,19 @@
                             
                             echo "<div class=\"alert alert-danger\" role=\"alert\">$error</div>"; 
                             }
+                     
+                        if(isset($loginfail) and $loginfail == 1 )
+
+                            {
+                            
+                            echo "<div class=\"alert alert-danger\" role=\"alert\">Wrong Email and Password Entered!</div>"; 
+                            }
+                        
                         
                         
                     ?>
                
-                </span><input class="form-control" type="text" name="username" required="" placeholder="Username" autofocus="" id="inputEmail" value="<?php if(isset($username)){echo $username;}?>"<?php if(isset($code) && $code==1){echo "class=error";}?>><input class="form-control" type="password" name="password" required="" placeholder="Password" id="inputPassword" value="<?php if(isset($password)){echo $password;}?>"<?php if(isset($code) && $code==2){echo "class=error";}?>>
+                </span><input class="form-control" type="text" name="username" placeholder="Username" autofocus="" id="inputEmail" value="<?php if(isset($username)){echo $username;}?>"<?php if(isset($code) && $code==1){echo "class=error";}?>><input class="form-control" type="password" name="password"  placeholder="Password" id="inputPassword" value="<?php if(isset($password)){echo $password;}?>"<?php if(isset($code) && $code==2){echo "class=error";}?>>
 
                 <div
                     class="checkbox">

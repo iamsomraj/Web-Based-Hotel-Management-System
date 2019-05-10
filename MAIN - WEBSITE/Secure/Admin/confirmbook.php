@@ -7,9 +7,9 @@ session_start();
 
 if(isset($_SESSION["isformfill"]))
 {
-    if(($_SESSION["isformfill"]) == 3)
+    if(($_SESSION["isformfill"]) == 4)
     {
-        $_SESSION["isformfill"] = 0;
+        $_SESSION["isformfill"] = 1;
         
     $name=$_SESSION['name'];
     $email=$_SESSION['email'];
@@ -71,7 +71,7 @@ if(isset($_SESSION["isformfill"]))
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-finance.php">Finance</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="prebook.php">Reservation</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-admin.php">Admins</a></li>
-                </ul><button class="btn btn-primary ml-auto" type="submit">Log Out</button></div>
+                </ul><button class="btn btn-primary ml-auto" type="submit"><a href="logout.php">Log Out</a></button></div>
         </div>
     </nav>
     
@@ -126,14 +126,14 @@ if(isset($_SESSION["isformfill"]))
             }
     else
     {
-        header("index.php");
+        header("location:admin-login.php");
     }
 
 
 }
 else
 {
-    header("index.php");
+    header("location:admin-login.php");
 }
 
 
