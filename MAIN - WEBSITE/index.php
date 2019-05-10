@@ -73,6 +73,21 @@
                     <p><a class="btn btn-primary btn-lg hero-button" role="button" href="prebook.php">Reservation</a></p>
                 </div>
             </div>
+            <div class="carousel-item">
+                <div class="jumbotron hero-four carousel-hero">
+                    <h1 class="hero-title text-capitalize">Comfortable Apartments with cozy beds<br></h1>
+                    <p class="lead hero-subtitle text-capitalize">the best of the world just for you and for your loved ones</p>
+                    <p><a class="btn btn-primary btn-lg hero-button" role="button" href="prebook.php">Reservation</a></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="jumbotron hero-five carousel-hero">
+                    <h1 class="hero-title text-capitalize">Beautiful restaurants and cafe<br></h1>
+                    <p class="lead hero-subtitle text-capitalize">heavenly Taste and delicacy are both served hand in hand</p>
+                    <p><a class="btn btn-primary btn-lg hero-button" role="button" href="prebook.php">Reservation</a></p>
+                </div>
+            </div>
+            
         </div>
         <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><i class="fa fa-chevron-left"></i><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next"><i class="fa fa-chevron-right"></i><span class="sr-only">Next</span></a></div>
         <ol
@@ -80,6 +95,8 @@
             <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-1" data-slide-to="1"></li>
             <li data-target="#carousel-1" data-slide-to="2"></li>
+            <li data-target="#carousel-1" data-slide-to="3"></li>
+            <li data-target="#carousel-1" data-slide-to="4"></li>
             </ol>
     </div>
     

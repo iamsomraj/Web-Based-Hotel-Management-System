@@ -23,6 +23,22 @@ div.jumbotron.hero-technology {
   background-image:url('../../assets/img/actual/imagethree.jpg');
 }
 
+
+
+div.jumbotron.hero-four {
+  background-image:url('../../assets/img/actual/imagefour.jpg');
+}
+
+
+
+div.jumbotron.hero-five {
+  background-image:url('../../assets/img/actual/imagefive.jpg');
+}
+
+
+
+
+
 h1.hero-title, h2.hero-title, h3.hero-title {
   text-shadow:0 3px 3px rgba(0,0,0,0.4);
   color:#fff;
