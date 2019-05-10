@@ -3,7 +3,7 @@
     if(isset($_SESSION['isformfill']))
     {
         
-            if($_SESSION['isformfill'] == 2)
+            if($_SESSION['isformfill'] == 2 || $_SESSION['isformfill'] == 1 )
             {
 ?>
 
