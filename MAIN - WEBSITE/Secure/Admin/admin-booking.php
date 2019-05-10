@@ -133,8 +133,8 @@
                     
                 <th>
                 <div class="btn-group ">
-                    <button type="button" class='btn btn-success btn-sm' role="button" href="admin-booking.php">Approve</a>
-                    <button type="button" class='btn btn-danger btn-sm' role="button" href="#">Reject</a>
+                    <button type="button" class='btn btn-success btn-sm' role="button"><a href="bookingaccepted.php?id=<?php echo $id; ?>">Approve</a></button>
+                    <button type="button" class='btn btn-danger btn-sm' role="button"><a href="bookingrejected.php?id=<?php echo $id; ?>">Reject</a></button>                
                 </div>	
                 </th>
 												
