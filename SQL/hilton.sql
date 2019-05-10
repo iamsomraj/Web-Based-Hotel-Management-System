@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2019 at 01:43 PM
+-- Generation Time: May 10, 2019 at 02:26 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -92,6 +92,13 @@ CREATE TABLE `confirmbooking` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `confirmbooking`
+--
+
+INSERT INTO `confirmbooking` (`id`, `name`, `email`, `contact`, `address`, `roomtype`, `checkin`, `checkout`, `noofdays`, `payment`, `paymethod`, `customerid`) VALUES
+(100, 'aaaaaaaaaaaa', 'aaaaa', 7003751073, 'sdafasf', 'wefwqefrtwegffgew', '2019-05-01', '2019-05-24', 1, 2, 'wge', 70);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -134,7 +141,7 @@ ALTER TABLE `booking`
 -- AUTO_INCREMENT for table `confirmbooking`
 --
 ALTER TABLE `confirmbooking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- Constraints for dumped tables

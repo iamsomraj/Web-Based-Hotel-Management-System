@@ -39,8 +39,9 @@ if(isset($_SESSION["isformfill"]))
     }
     else
     {
-            $databaselog .= "<p>Data is not inserted!</p>";
-            header("location:admin-login-wrong.php");
+            $databaselog .= "<p>Cannot log in!</p>";
+            $_SESSION["loginfail"] = true;
+            header("location:admin-login.php");
         
     }
         
