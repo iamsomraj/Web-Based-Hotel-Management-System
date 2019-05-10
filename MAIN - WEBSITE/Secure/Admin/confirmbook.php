@@ -58,7 +58,8 @@ if(isset($_SESSION["isformfill"]))
 </head>
 
 
-<body data-spy="scroll" data-target="#navbar-e" data-offset="300">
+
+<body style="background-color:#fcf3c1;" data-spy="scroll" data-target="#navbar-e" data-offset="300">
 <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light" style="background-color:#ffffff;">
         <div class="container-fluid"><a class="navbar-brand" href="#">Admin Panel</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
@@ -71,7 +72,7 @@ if(isset($_SESSION["isformfill"]))
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-finance.php">Finance</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="prebook.php">Reservation</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-admin.php">Admins</a></li>
-                </ul><button class="btn btn-primary ml-auto" type="submit"><a href="logout.php">Log Out</a></button></div>
+                </ul><button class="btn bg-w btn-primary ml-auto" type="submit"><a class="text-white" href="logout.php">Log Out</a></button></div>
         </div>
     </nav>
     

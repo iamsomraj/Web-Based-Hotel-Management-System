@@ -132,9 +132,9 @@
                 <td><?php echo $paymethod; ?></td>
                     
                 <th>
-                <div class="btn-group ">
-                    <button type="button" class='btn btn-success btn-sm' role="button"><a href="bookingaccepted.php?id=<?php echo $id; ?>">Approve</a></button>
-                    <button type="button" class='btn btn-danger btn-sm' role="button"><a href="bookingrejected.php?id=<?php echo $id; ?>">Reject</a></button>                
+                <div class="btn-group btn-outline-dark">
+                    <button type="button" class='btn btn-success bg-success btn-sm' role="button"><a class="text-white text-uppercase" href="bookingaccepted.php?id=<?php echo $id; ?>">Approve</a></button>
+                    <button type="button" class='btn btn-danger bg-danger btn-sm' role="button"><a  class="text-white text-uppercase" href="bookingrejected.php?id=<?php echo $id; ?>">Reject</a></button>                
                 </div>	
                 </th>
 												
