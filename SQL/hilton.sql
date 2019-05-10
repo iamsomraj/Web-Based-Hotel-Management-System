@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2019 at 05:49 PM
+-- Generation Time: May 10, 2019 at 01:43 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `hilton`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `user` longtext NOT NULL,
+  `pass` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `user`, `pass`) VALUES
+(1, 'Admin', '1234');
 
 -- --------------------------------------------------------
 
@@ -47,11 +66,40 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`id`, `name`, `email`, `contact`, `address`, `roomtype`, `checkin`, `checkout`, `noofdays`, `payment`, `paymethod`) VALUES
-(1, 'Somraj Mukherjee', 'iamsomraj@gmail.com', 7003751072, 'Kolkata', 'Superior', '2019-04-10', '2019-04-20', 10, 200000, 'Pay Later');
+(69, 'Jagriti Chourasia normal', 'jagriti.chourasia47@gmail.com', 7551056640, 'Narula Institute of Technology', 'Superior', '2019-05-17', '2019-05-31', 14, 203000, 'Pay Later'),
+(70, 'Jagriti Chourasia', 'jagriti.chourasia47@gmail.com', 7551056640, 'Narula Institute of Technology', 'Deluxe', '2019-05-03', '2019-05-31', 28, 294000, 'Pay Later'),
+(71, 'Jagriti Chourasia', 'jagriti.chourasia47@gmail.com', 7551056640, 'Narula Institute of Technology', 'Superior', '2019-04-11', '2019-05-31', 0, 0, 'Pay Later');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `confirmbooking`
+--
+
+CREATE TABLE `confirmbooking` (
+  `id` int(11) NOT NULL,
+  `name` longtext NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `contact` bigint(20) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `roomtype` longtext NOT NULL,
+  `checkin` date NOT NULL,
+  `checkout` date NOT NULL,
+  `noofdays` bigint(20) NOT NULL,
+  `payment` bigint(20) NOT NULL,
+  `paymethod` varchar(20) NOT NULL,
+  `customerid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `booking`
@@ -60,14 +108,43 @@ ALTER TABLE `booking`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `confirmbooking`
+--
+ALTER TABLE `confirmbooking`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `customerid` (`customerid`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+
+--
+-- AUTO_INCREMENT for table `confirmbooking`
+--
+ALTER TABLE `confirmbooking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `confirmbooking`
+--
+ALTER TABLE `confirmbooking`
+  ADD CONSTRAINT `confirmbooking_ibfk_1` FOREIGN KEY (`customerid`) REFERENCES `booking` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
