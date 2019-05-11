@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2019 at 02:26 PM
+-- Generation Time: May 11, 2019 at 09:36 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -61,15 +61,6 @@ CREATE TABLE `booking` (
   `paymethod` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `booking`
---
-
-INSERT INTO `booking` (`id`, `name`, `email`, `contact`, `address`, `roomtype`, `checkin`, `checkout`, `noofdays`, `payment`, `paymethod`) VALUES
-(69, 'Jagriti Chourasia normal', 'jagriti.chourasia47@gmail.com', 7551056640, 'Narula Institute of Technology', 'Superior', '2019-05-17', '2019-05-31', 14, 203000, 'Pay Later'),
-(70, 'Jagriti Chourasia', 'jagriti.chourasia47@gmail.com', 7551056640, 'Narula Institute of Technology', 'Deluxe', '2019-05-03', '2019-05-31', 28, 294000, 'Pay Later'),
-(71, 'Jagriti Chourasia', 'jagriti.chourasia47@gmail.com', 7551056640, 'Narula Institute of Technology', 'Superior', '2019-04-11', '2019-05-31', 0, 0, 'Pay Later');
-
 -- --------------------------------------------------------
 
 --
@@ -96,7 +87,32 @@ CREATE TABLE `confirmbooking` (
 --
 
 INSERT INTO `confirmbooking` (`id`, `name`, `email`, `contact`, `address`, `roomtype`, `checkin`, `checkout`, `noofdays`, `payment`, `paymethod`, `customerid`) VALUES
-(100, 'aaaaaaaaaaaa', 'aaaaa', 7003751073, 'sdafasf', 'wefwqefrtwegffgew', '2019-05-01', '2019-05-24', 1, 2, 'wge', 70);
+(1, 'Jagriti Chourasia', 'jagriti.chourasia47@gmail.com', 7551056640, 'Narula Institute of Technology', 'Superior', '2019-05-16', '2019-05-31', 15, 217500, 'Pay Later', 1),
+(2, 'Jagriti Chourasia', 'jagriti.chourasia47@gmail.com', 7551056640, 'Narula Institute of Technology', 'Semi Deluxe', '2019-05-11', '2019-05-24', 13, 97500, 'Pay Later', 2),
+(3, 'Jagriti Chourasia', 'jagriti.chourasia47@gmail.com', 7551056640, 'Narula Institute of Technology', 'Superior', '2019-05-03', '2019-05-24', 21, 304500, 'Pay Later', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room`
+--
+
+CREATE TABLE `room` (
+  `id` int(11) NOT NULL,
+  `roomtype` longtext NOT NULL,
+  `total` int(11) NOT NULL,
+  `vacant` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`id`, `roomtype`, `total`, `vacant`) VALUES
+(1, 'Superior', 5, 5),
+(2, 'Deluxe', 5, 5),
+(3, 'Saver', 5, 5),
+(4, 'Semi Deluxe', 5, 5);
 
 --
 -- Indexes for dumped tables
@@ -118,8 +134,13 @@ ALTER TABLE `booking`
 -- Indexes for table `confirmbooking`
 --
 ALTER TABLE `confirmbooking`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `customerid` (`customerid`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `room`
+--
+ALTER TABLE `room`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -135,23 +156,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `confirmbooking`
 --
 ALTER TABLE `confirmbooking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT for table `room`
 --
-
---
--- Constraints for table `confirmbooking`
---
-ALTER TABLE `confirmbooking`
-  ADD CONSTRAINT `confirmbooking_ibfk_1` FOREIGN KEY (`customerid`) REFERENCES `booking` (`id`);
+ALTER TABLE `room`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
