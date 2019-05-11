@@ -66,7 +66,66 @@
     
     
     
-    <div class="container"></div>
+    <div class="container">
+       </br>
+        <div class="display-4 text-center text-capitalize">Rooms</div>
+        </br>
+    <?php
+             include("connection.php");
+             $sql="Select * from room";
+             $result=mysqli_query($link,$sql);
+    ?>
+     
+                  
+              
+    
+      
+             
+         <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Room Type</th>
+              <th scope="col">Rooms occupied</th>
+              <th scope="col">vacant rooms</th>
+            
+            </tr>
+          </thead>
+             
+					
+          <tbody>
+              <?php
+              
+              while($row=mysqli_fetch_array($result))
+              {
+                  
+                $id=$row['id'];
+                $roomtype=$row['roomtype'];
+                $total=$row['total'];
+                $vacant=$row['vacant'];
+            ?>
+             
+                <tr>
+                <th scope="row"><?php echo $id; ?></th>
+                <td><?php echo $roomtype; ?></td>
+                <td><?php echo $total; ?></td>
+                <td><?php echo $vacant; ?></td>
+                
+                    
+                
+                
+            
+												
+                
+                
+            </tr> 
+              <?php
+              }
+              ?>
+              
+          </tbody>
+        </table>        
+    </div>
     
     
     
