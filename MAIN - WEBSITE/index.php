@@ -100,6 +100,23 @@
             </ol>
     </div>
     
+        </br>
+        </br>
+        </br>
+        </br> 
+       
+    <div class="container bg-light">
+    
+        </br> 
+        </br> 
+        </br>
+        </br>
+        <p class="display-4 text-center text-capitalize">At Hilton, passport stamps are badges of honor and feeling welcome is a universal language.</p>
+        </br> 
+        </br>
+        </br> 
+    </div>
+    
     
     <div class="container" id="gallery">
         </br>
@@ -107,7 +124,7 @@
     </div>
     
     
-    <div class="photo-gallery" id="gallery">
+    <div class="photo-gallery">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Gallery</h2>
