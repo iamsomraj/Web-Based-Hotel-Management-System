@@ -86,7 +86,7 @@
             <tr>
               <th scope="col">Id</th>
               <th scope="col">Room Type</th>
-              <th scope="col">Rooms occupied</th>
+              <th scope="col">Total rooms</th>
               <th scope="col">vacant rooms</th>
             
             </tr>
