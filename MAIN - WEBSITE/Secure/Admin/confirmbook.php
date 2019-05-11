@@ -36,6 +36,8 @@ if(isset($_SESSION["isformfill"]))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
@@ -106,10 +108,97 @@ if(isset($_SESSION["isformfill"]))
     
     
     
+  <?php
     
+    $name="Name : ".$_SESSION['name'];
+    $email="Email : ".$_SESSION['email'];
+    $contact="Contact : ".$_SESSION['contact'];
+    $address="Address : ".$_SESSION['address'];
+    $roomtype="Type Of Room : ".$_SESSION['roomtype'];
+    $checkin="Check In : ".$_SESSION['checkin'];
+    $checkout="Check Out : ".$_SESSION['checkout'];
+    $noofdays="Number Of Days : ".$_SESSION['noofdays'];
+    $price="Total Price : ".$_SESSION['price'];
+    $pay="Payment Method : ".$_SESSION['pay'];
+    
+    ?>
     
 </div>
     
+    
+<script>
+  
+var name = "<?php echo $name;?>";
+var email = "<?php echo $email;?>";
+var contact ="<?php echo $contact;?>";
+var address ="<?php echo $address;?>";
+var roomtype ="<?php echo $roomtype;?>";
+var checkin ="<?php echo $checkin;?>";
+var checkout ="<?php echo $checkout;?>";
+var noofdays ="<?php echo $noofdays;?>";
+var price ="<?php echo $price;?>";
+var pay ="<?php echo $pay;?>";
+
+    
+var doc = new jsPDF();
+var line = 20;
+doc.setFont("times");
+doc.setFontStyle("bold");
+doc.text('Recepit Details', 20, line, null, null, 'left');
+line = line + 10;
+doc.text('____________________________________________________', 20, line, null, null, 'left');
+line = line + 10;
+line = line + 10;
+doc.text('Hilton Hotels Private Limited', 20, line, null, null, 'left');
+line = line + 10;
+doc.text('The Walk', 20, line, null, null, 'left');
+line = line + 10;
+doc.text('Jumeirah Beach', 20, line, null, null, 'left');
+line = line + 10;
+doc.text('Post Box - 2431', 20, line, null, null, 'left');
+line = line + 10;
+doc.text('Dubai, UAE', 20, line, null, null, 'left');
+line = line + 10;
+line = line + 10;
+doc.text('____________________________________________________', 20, line, null, null, 'left');
+line = line + 10;
+doc.setFont("times");
+doc.setFontStyle("italic");    
+    
+doc.text(name, 20, line, null, null, 'left');
+line = line + 10;
+    
+doc.text(email, 20, line, null, null, 'left');
+line = line + 10;
+    
+doc.text(contact, 20, line, null, null, 'left');
+line = line + 10;
+    
+doc.text(address, 20, line, null, null, 'left');
+line = line + 10;
+    
+doc.text(roomtype, 20, line, null, null, 'left');
+line = line + 10;
+    
+doc.text(checkin, 20, line, null, null, 'left');
+line = line + 10;
+    
+doc.text(checkout, 20, line, null, null, 'left');
+line = line + 10;
+    
+doc.text(noofdays, 20, line, null, null, 'left');
+line = line + 10;
+    
+doc.text(price, 20, line, null, null, 'left');
+line = line + 10;
+    
+doc.text(pay, 20, line, null, null, 'left');
+line = line + 10;
+            
+doc.save();
+    
+</script>
+
     
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
