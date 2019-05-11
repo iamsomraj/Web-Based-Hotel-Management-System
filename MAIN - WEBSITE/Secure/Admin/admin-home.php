@@ -21,12 +21,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap1.css">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap2.css">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap4.css">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap3.css">
+
     <link rel="stylesheet" href="../assets/css/Carousel-Hero.css">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap.css">
+
     <link rel="stylesheet" href="../assets/css/Features-Blue.css">
     <link rel="stylesheet" href="../assets/css/Features-Boxed.css">
     <link rel="stylesheet" href="../assets/css/Features-Clean.css">
@@ -62,13 +59,13 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-finance.php">Finance</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="prebook.php">Reservation</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-admin.php">Admins</a></li>
-                </ul><button class="btn btn-primary ml-auto" type="submit" name="submit"><a href="logout.php">Log Out</button></a></div>
+                </ul><button class="btn btn-primary ml-auto" type="submit"><a href="logout.php">Log Out</a></button></div>
         </div>
     </nav>
     
-    
     <div class="container">
         <div class="intro">
+            </br>
             <h1 class="text-center">Dashboard</h1>
             <p class="lead text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
         </div>
@@ -116,6 +113,7 @@
     <script src="../assets/js/DashBoard-light-boostrap3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
     <script src="../assets/js/Sidebar-Menu.js"></script>
+</body>
 </body>
 
 </html>

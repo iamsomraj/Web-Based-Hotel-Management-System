@@ -170,7 +170,8 @@
                 </ul><button class="btn bg-w btn-primary ml-auto" type="submit"><a class="text-white" href="logout.php">Log Out</a></button></div>
         </div>
     </nav>
-    <div></div>
+    <div class="container">
+    
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
             <div class="form-group">
                 <p></p>
@@ -274,8 +275,9 @@
                 </div>
             </div>
         </form>
-    </div>
     
+    
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>

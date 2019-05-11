@@ -6,6 +6,7 @@
 
 <html>
 
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,12 +18,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap1.css">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap2.css">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap4.css">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap3.css">
+
     <link rel="stylesheet" href="../assets/css/Carousel-Hero.css">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap.css">
+
     <link rel="stylesheet" href="../assets/css/Features-Blue.css">
     <link rel="stylesheet" href="../assets/css/Features-Boxed.css">
     <link rel="stylesheet" href="../assets/css/Features-Clean.css">
@@ -226,7 +224,7 @@
     
     
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/DashBoard-light-boostrap2.js"></script>
     <script src="../assets/js/DashBoard-light-boostrap.js"></script>

@@ -111,7 +111,8 @@
                 </ul><button class="btn bg- btn-primary ml-auto" type="submit"><a class="text-white" href="logout.php">Log Out</a></button></div>
         </div>
     </nav>
-    <div></div>
+    <div class="container">
+    
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
             <div class="form-group">
                 <p></p>

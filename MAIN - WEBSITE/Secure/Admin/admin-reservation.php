@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,20 +19,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap1.css">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap2.css">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap4.css">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap3.css">
+
     <link rel="stylesheet" href="../assets/css/Carousel-Hero.css">
-    <link rel="stylesheet" href="../assets/css/DashBoard-light-boostrap.css">
+
+    <link rel="stylesheet" href="../assets/css/Features-Blue.css">
+    <link rel="stylesheet" href="../assets/css/Features-Boxed.css">
     <link rel="stylesheet" href="../assets/css/Features-Clean.css">
     <link rel="stylesheet" href="../assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="../assets/css/Header-Dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
-    <link rel="stylesheet" href="../assets/css/Lightbox-Gallery.css">
-    <link rel="stylesheet" href="../assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="../assets/css/Google-Style-Login.css">
+    <link rel="stylesheet" href="../assets/css/Lightbox-Gallery.css">
     <link rel="stylesheet" href="../assets/css/Pretty-Header.css">
+    <link rel="stylesheet" href="../assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="../assets/css/Responsive-Form.css">
     <link rel="stylesheet" href="../assets/css/Responsive-Form1.css">
     <link rel="stylesheet" href="../assets/css/Sidebar-Menu.css">
