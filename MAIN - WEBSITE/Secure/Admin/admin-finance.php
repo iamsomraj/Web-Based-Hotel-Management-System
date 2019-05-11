@@ -14,21 +14,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
-    <link rel="stylesheet" href="../assets/css/Carousel-Hero.css">
-
-    <link rel="stylesheet" href="../assets/css/Features-Blue.css">
-    <link rel="stylesheet" href="../assets/css/Features-Boxed.css">
-    <link rel="stylesheet" href="../assets/css/Features-Clean.css">
-    <link rel="stylesheet" href="../assets/css/Footer-Dark.css">
-    <link rel="stylesheet" href="../assets/css/Header-Dark.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
     <link rel="stylesheet" href="../assets/css/Google-Style-Login.css">
     <link rel="stylesheet" href="../assets/css/Lightbox-Gallery.css">
     <link rel="stylesheet" href="../assets/css/Pretty-Header.css">
@@ -43,6 +33,7 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/Team-Boxed.css">
     <link rel="stylesheet" href="../assets/css/Testimonials.css">
+    
 </head>
 
 <body>
@@ -61,18 +52,262 @@
                 </ul><button class="btn btn-primary ml-auto" type="submit"><a href="logout.php">Log Out</a></button></div>
         </div>
     </nav>
+    </br>
+    </br>
+    <?php
+        
+             include("connection.php");
+             $sql="Select * from confirmbooking";
+             $result=mysqli_query($link,$sql);
+              $labelstring = $sellingprice = $actualprice = $profit = "";
+              while($row=mysqli_fetch_array($result))
+              {
+                  
+                $id=$row['id'];
+                $name=$row['name'];
+                $email=$row['email'];
+                $contact=$row['contact'];
+                $address=$row['address'];
+                $roomtype=$row['roomtype'];
+                $checkin=$row['checkin'];
+                $checkout=$row['checkout'];
+                $noofdays=$row['noofdays'];
+                $payment=$row['payment']; 
+                $paymethod=$row['paymethod'];
+                $customerid = $row["customerid"];
+                
+              
+                $actualprice .= round($payment*0.75)." "; 
+                $sellingprice .= $payment." "; 
+                $profit .= ($payment-round($payment*0.75))." "; 
+                $labelstring .= $id."->".str_replace(' ', '',$name)." ";
+
+              }
+        
+     
+
+?>
+            
+   
+        
+        
+        
+        
+        
+        
+
+
     
+    <div class="container">
+        <p class="text-center text-dark text-capitalize display-4">bar comparison</p>
+
+        <canvas id="myChart" width="75%"></canvas>
+        
+        <p class="text-center text-dark text-capitalize display-4">line area comparison</p>
+        <canvas id="myChartnew"></canvas>
+
+    </div>
+ 
     
-    <div class="container"></div>
+  <script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+    let myChartnew = document.getElementById('myChartnew').getContext('2d');
+
+    let label = "<?php echo $labelstring;?>";
+    let labelarray = label.split(" ");
+    labelarray = labelarray.slice(0,(labelarray.length-1));
+    
+    let actual = "<?php echo $actualprice;?>";
+    let actualarray = actual.split(" ");
+    actualarray = actualarray.slice(0,(actualarray.length-1));    
+      
+      
+    let selling = "<?php echo $sellingprice;?>";
+    let sellingarray = selling.split(" ");
+    sellingarray = sellingarray.slice(0,(sellingarray.length-1));
+      
+      
+    let profit = "<?php echo $profit;?>";
+    let profitarray = profit.split(" ");
+    profitarray = profitarray.slice(0,(profitarray.length-1));
+      
+      
+    // Global Options
+    Chart.defaults.global.defaultFontFamily = 'Arial';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#777';
+
+    let massPopChart = new Chart(myChart, {
+      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels: labelarray,
+        datasets:[{
+          label:'Selling Price',
+          data: sellingarray,
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
+            'rgba(255, 159, 64, 0.6)',
+            'rgba(255, 99, 132, 0.6)'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        },
+        {
+          label:'Actual Price',
+          data: actualarray,
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
+            'rgba(255, 159, 64, 0.6)',
+            'rgba(255, 99, 132, 0.6)'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+        ]
+      },
+      options:{
+        title:{
+          display:true,
+          fontSize:50
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
+  let massPopChartNew = new Chart(myChartnew, {
+      type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels: labelarray,
+        datasets:[{
+          label:'Selling Price',
+          data: sellingarray,
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)'
+
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        },
+        {
+          label:'Actual Price',
+          data: actualarray,
+          //backgroundColor:'green',
+          backgroundColor:[
+                'rgba(54, 162, 235, 0.6)'
+
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }
+                  
+                  
+        ,
+        {
+          label:'Profit',
+          data: profitarray,
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255, 159, 64, 0.6)',
+
+
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+        ]
+      },
+      options:{
+        title:{
+          display:true,
+          fontSize:50
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
+  </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/DashBoard-light-boostrap2.js"></script>
-    <script src="../assets/js/DashBoard-light-boostrap.js"></script>
-    <script src="../assets/js/DashBoard-light-boostrap1.js"></script>
-    <script src="../assets/js/DashBoard-light-boostrap4.js"></script>
-    <script src="../assets/js/DashBoard-light-boostrap3.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
-    <script src="../assets/js/Sidebar-Menu.js"></script>
+
+ 
 </body>
 
 </html>

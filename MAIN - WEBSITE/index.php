@@ -56,35 +56,35 @@
                 <div class="jumbotron hero-nature carousel-hero">
                     <h1 class="hero-title text-capitalize">Welcome to Hilton</h1>
                     <p class="lead hero-subtitle text-capitalize">Experience an unforgettable extended stay in the heart of Jumeirah Beach</p>
-                    <p><a class="btn btn-primary btn-lg hero-button" role="button" href="prebook.php">Reservation</a></p>
+                    <p><a class="btn btn-primary btn-lg rounded hero-button" role="button" href="prebook.php">Reservation</a></p>
                 </div>
             </div> 
             <div class="carousel-item">
                 <div class="jumbotron hero-photography carousel-hero">
                     <h1 class="hero-title">Pleasure and Convenience</h1>
                     <p class="lead hero-subtitle text-capitalize">Enjoy Your stay with our Wide Range of Rooms at Great Price</p>
-                    <p><a class="btn btn-primary btn-lg hero-button" role="button" href="prebook.php">Reservation</a></p>
+                    <p><a class="btn btn-primary btn-lg rounded hero-button" role="button" href="prebook.php">Reservation</a></p>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="jumbotron hero-technology carousel-hero">
                     <h1 class="hero-title text-capitalize">Luxurious Amenities and Service<br></h1>
                     <p class="lead hero-subtitle text-capitalize">Beautiful sea facing lounge including pool area and cafe.</p>
-                    <p><a class="btn btn-primary btn-lg hero-button" role="button" href="prebook.php">Reservation</a></p>
+                    <p><a class="btn btn-primary btn-lg rounded hero-button" role="button" href="prebook.php">Reservation</a></p>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="jumbotron hero-four carousel-hero">
                     <h1 class="hero-title text-capitalize">Comfortable Apartments with cozy beds<br></h1>
                     <p class="lead hero-subtitle text-capitalize">the best of the world just for you and for your loved ones</p>
-                    <p><a class="btn btn-primary btn-lg hero-button" role="button" href="prebook.php">Reservation</a></p>
+                    <p><a class="btn btn-primary btn-lg rounded hero-button" role="button" href="prebook.php">Reservation</a></p>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="jumbotron hero-five carousel-hero">
                     <h1 class="hero-title text-capitalize">Beautiful restaurants and cafe<br></h1>
                     <p class="lead hero-subtitle text-capitalize">heavenly Taste and delicacy are both served hand in hand</p>
-                    <p><a class="btn btn-primary btn-lg hero-button" role="button" href="prebook.php">Reservation</a></p>
+                    <p><a class="btn btn-primary btn-lg rounded hero-button" role="button" href="prebook.php">Reservation</a></p>
                 </div>
             </div>
             
