@@ -60,7 +60,62 @@
                 </ul><button class="btn btn-primary ml-auto" type="submit"><a href="logout.php">Log Out</a></button></div>
         </div>
     </nav>
-    <div class="container"></div>
+    <div class="container">
+       </br>
+        <div class="display-4 text-center text-capitalize">Admin</div>
+        </br>
+    <?php
+             include("connection.php");
+             $sql="Select * from admin";
+             $result=mysqli_query($link,$sql);
+    ?>
+     
+                  
+              
+    
+      
+             
+         <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">User Name</th>
+              <th scope="col">Password</th>
+        
+            </tr>
+          </thead>
+             
+					
+          <tbody>
+              <?php
+              
+              while($row=mysqli_fetch_array($result))
+              {
+                  
+                $id=$row['id'];
+                $user=$row['user'];
+                $pass=$row['pass'];
+            ?>
+             
+                <tr>
+                <th scope="row"><?php echo $id; ?></th>
+                <td><?php echo $user; ?></td>
+                <td><?php echo $pass; ?></td>
+                
+												
+                
+                
+            </tr> 
+              <?php
+              }
+              ?>
+              
+          </tbody>
+        </table>        
+    
+    
+    
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/DashBoard-light-boostrap2.js"></script>
