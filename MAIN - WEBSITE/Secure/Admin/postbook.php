@@ -301,6 +301,3 @@
         header("location:admin-login.php");
     }
 ?>
-
-
-?>
