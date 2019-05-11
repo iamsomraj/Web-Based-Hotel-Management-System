@@ -52,14 +52,14 @@
                 </ul><button class="btn btn-primary ml-auto" type="submit"><a href="logout.php">Log Out</a></button></div>
         </div>
     </nav>
-    </br>
-    </br>
+
     <?php
         
              include("connection.php");
              $sql="Select * from confirmbooking";
              $result=mysqli_query($link,$sql);
               $labelstring = $sellingprice = $actualprice = $profit = "";
+                $tap = $tsp = $tp = 0; 
               while($row=mysqli_fetch_array($result))
               {
                   
@@ -76,15 +76,22 @@
                 $paymethod=$row['paymethod'];
                 $customerid = $row["customerid"];
                 
+                $tap = $tap + round($payment*0.65);
+                $tsp = $tsp + $payment;
+                $tp = $tp + ($payment - round($payment*0.65));
               
-                $actualprice .= round($payment*0.75)." "; 
+                $actualprice .= round($payment*0.65)." "; 
                 $sellingprice .= $payment." "; 
-                $profit .= ($payment-round($payment*0.75))." "; 
+                $profit .= ($payment-round($payment*0.65))." "; 
                 $labelstring .= $id."->".str_replace(' ', '',$name)." ";
 
               }
         
-     
+                $tap .= " "; 
+                $tsp .= " ";
+                $tp .= " "; 
+        
+
 
 ?>
             
@@ -99,12 +106,18 @@
 
     
     <div class="container">
+            </br>
+    </br>
         <p class="text-center text-dark text-capitalize display-4">bar comparison</p>
-
-        <canvas id="myChart" width="75%"></canvas>
-        
+        <canvas id="myChart"></canvas>
+            </br>
+    </br>
         <p class="text-center text-dark text-capitalize display-4">line area comparison</p>
         <canvas id="myChartnew"></canvas>
+    </br>
+    </br>
+        <p class="text-center text-dark text-capitalize display-4">Pie comparison</p>
+        <canvas id="myChartnewnew"></canvas>
 
     </div>
  
@@ -112,6 +125,7 @@
   <script>
     let myChart = document.getElementById('myChart').getContext('2d');
     let myChartnew = document.getElementById('myChartnew').getContext('2d');
+    let myChartnewnew = document.getElementById('myChartnewnew').getContext('2d');
 
     let label = "<?php echo $labelstring;?>";
     let labelarray = label.split(" ");
@@ -130,6 +144,21 @@
     let profit = "<?php echo $profit;?>";
     let profitarray = profit.split(" ");
     profitarray = profitarray.slice(0,(profitarray.length-1));
+      
+      
+    let totalactual = "<?php echo $tap;?>";
+    let totalactualarray = totalactual.split(" ");
+    totalactualarray = totalactualarray.slice(0,(totalactualarray.length-1));    
+      
+    let totalselling = "<?php echo $tsp;?>";
+    let totalsellingarray = totalselling.split(" ");
+    totalsellingarray = totalsellingarray.slice(0,(totalsellingarray.length-1));       
+      
+      
+    let totalprofit = "<?php echo $tp;?>";
+    let totalprofitarray = totalprofit.split(" ");
+    totalprofitarray = totalprofitarray.slice(0,(totalprofitarray.length-1));   
+
       
       
     // Global Options
@@ -216,7 +245,8 @@
         }
       }
     });
-  let massPopChartNew = new Chart(myChartnew, {
+    let massPopChartNew = new Chart(myChartnew, {
+      
       type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data:{
         labels: labelarray,
@@ -263,6 +293,70 @@
           hoverBorderWidth:3,
           hoverBorderColor:'#000'
         }
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+        ]
+      },
+      options:{
+        title:{
+          display:true,
+          fontSize:50
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
+    let massPopChartNewNew = new Chart(myChartnewnew, {
+      type:'polarArea', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels: ['Total Selling Price','Total Actual Price', 'Total Profit'],
+        datasets:[{
+          label:'Total Selling Price',
+          data: [totalsellingarray[0],totalactualarray[0],totalprofitarray[0]],
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+
+            'rgba(255, 159, 64, 0.6)'
+
+,
+
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        },
+        
+ 
+                  
                  
                  
                  
