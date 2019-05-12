@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2019 at 09:36 AM
+-- Generation Time: May 12, 2019 at 03:16 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -64,36 +64,6 @@ CREATE TABLE `booking` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `confirmbooking`
---
-
-CREATE TABLE `confirmbooking` (
-  `id` int(11) NOT NULL,
-  `name` longtext NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `contact` bigint(20) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `roomtype` longtext NOT NULL,
-  `checkin` date NOT NULL,
-  `checkout` date NOT NULL,
-  `noofdays` bigint(20) NOT NULL,
-  `payment` bigint(20) NOT NULL,
-  `paymethod` varchar(20) NOT NULL,
-  `customerid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `confirmbooking`
---
-
-INSERT INTO `confirmbooking` (`id`, `name`, `email`, `contact`, `address`, `roomtype`, `checkin`, `checkout`, `noofdays`, `payment`, `paymethod`, `customerid`) VALUES
-(1, 'Jagriti Chourasia', 'jagriti.chourasia47@gmail.com', 7551056640, 'Narula Institute of Technology', 'Superior', '2019-05-16', '2019-05-31', 15, 217500, 'Pay Later', 1),
-(2, 'Jagriti Chourasia', 'jagriti.chourasia47@gmail.com', 7551056640, 'Narula Institute of Technology', 'Semi Deluxe', '2019-05-11', '2019-05-24', 13, 97500, 'Pay Later', 2),
-(3, 'Jagriti Chourasia', 'jagriti.chourasia47@gmail.com', 7551056640, 'Narula Institute of Technology', 'Superior', '2019-05-03', '2019-05-24', 21, 304500, 'Pay Later', 3);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `completebooking`
 --
 
@@ -112,16 +82,30 @@ CREATE TABLE `completebooking` (
   `customerid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Indexes for dumped tables
---
+-- --------------------------------------------------------
 
 --
--- Indexes for table `completebooking`
+-- Table structure for table `confirmbooking`
 --
-ALTER TABLE `completebooking`
-  ADD PRIMARY KEY (`id`);
 
+CREATE TABLE `confirmbooking` (
+  `id` int(11) NOT NULL,
+  `name` longtext NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `contact` bigint(20) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `roomtype` longtext NOT NULL,
+  `checkin` date NOT NULL,
+  `checkout` date NOT NULL,
+  `noofdays` bigint(20) NOT NULL,
+  `payment` bigint(20) NOT NULL,
+  `paymethod` varchar(20) NOT NULL,
+  `customerid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `room`
 --
 
@@ -142,7 +126,6 @@ INSERT INTO `room` (`id`, `roomtype`, `total`, `vacant`) VALUES
 (3, 'Saver', 5, 5),
 (4, 'Semi Deluxe', 5, 5);
 
-
 --
 -- Indexes for dumped tables
 --
@@ -157,6 +140,12 @@ ALTER TABLE `admin`
 -- Indexes for table `booking`
 --
 ALTER TABLE `booking`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `completebooking`
+--
+ALTER TABLE `completebooking`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -185,13 +174,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `completebooking`
+--
+ALTER TABLE `completebooking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `confirmbooking`
 --
 ALTER TABLE `confirmbooking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `room`
@@ -199,12 +194,6 @@ ALTER TABLE `confirmbooking`
 ALTER TABLE `room`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
--- AUTO_INCREMENT for table `completebooking`
---
-ALTER TABLE `completebooking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
