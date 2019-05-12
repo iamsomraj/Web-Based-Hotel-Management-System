@@ -62,7 +62,32 @@
     </nav>
     <div class="container">
        </br>
-        <div class="display-4 text-center text-capitalize">Admin</div>
+        <div class="display-4 text-center text-capitalize">Existing Administrators</div>
+        </br>
+        
+         <?php
+            if(isset($_GET["ustatus"]))
+            {
+                if($_GET["ustatus"] == 1)
+                {
+                    echo  "<p class=\"alert alert-success text-center text-capitalize\">Admin Username and Password updation is successful!</p>";
+                }
+                else if($_GET["ustatus"] == 2)
+                {
+                    echo  "<p class=\"alert alert-success text-center text-capitalize\">Admin Username and Password deletion is successful!</p>";
+                }
+                else
+                {
+                    echo  "<p class=\"alert alert-danger text-center text-capitalize\">Admin Username and Password Modification is not successful!</p>";
+                }
+                
+                
+            }
+            
+        ?>
+    
+    
+
         </br>
     <?php
              include("connection.php");
@@ -78,9 +103,11 @@
          <table class="table table-striped table-dark">
           <thead>
             <tr>
-              <th scope="col">Id</th>
-              <th scope="col">User Name</th>
-              <th scope="col">Password</th>
+                <th scope="col">Id</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Password</th>
+                <th scope="col">Action</th>
+
         
             </tr>
           </thead>
@@ -98,11 +125,13 @@
             ?>
              
                 <tr>
-                <th scope="row"><?php echo $id; ?></th>
-                <td><?php echo $user; ?></td>
-                <td><?php echo $pass; ?></td>
-                
-												
+                <form method="post" action="adminupdate.php">
+                <td><input type="text" name="id" readonly value="<?php echo $id; ?>"></td>
+                <td><input type="text" name="username" value="<?php echo $user; ?>"></td>
+                <td><input type="password" name="password" value="<?php echo $pass; ?>"></td>
+                <td><button class="btn btn-primary" type="submit" name="updateadmin" value="Update">Update</button></td>
+                <td><button class="btn btn-danger" type="submit" name="deleteadmin" value="Delete">Delete</button></td>
+				</form>							
                 
                 
             </tr> 
@@ -110,8 +139,55 @@
               }
               ?>
               
+
           </tbody>
-        </table>        
+        </table>
+
+       </br>       </br>       </br>
+        <p class="display-4 text-dark text-center text-capitalize">Add New Administrator</p>
+        </br>
+       <?php
+            if(isset($_GET["astatus"]))
+            {
+                if($_GET["astatus"] == 1)
+                {
+                    echo  "<p class=\"alert alert-success text-center text-capitalize\">New Admin Added successfully!</p>";
+                }
+                else
+                {
+                    echo  "<p class=\"alert alert-danger text-center text-capitalize\">New Admin addition is not successful!</p>";
+                }
+               $_GET["astatus"] = -99;
+
+            }
+        
+            
+            
+        ?>
+
+         <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Password</th>
+                <th scope="col">Action</th>
+            </tr>
+          </thead>
+
+
+            <tbody>
+                <tr>
+                <form method="post" action="adminadd.php">
+                <td><input type="text" name="id" readonly></td>
+                <td><input type="text" name="username" value="" placeholder="Username"></td>
+                <td><input type="password" name="password" value="" placeholder="Password"></td>
+                <td><button class="btn btn-primary" type="submit" name="addadmin" value="Add">Add</button></td>
+				</form>							
+                </tr> 
+            </tbody>
+        </table>
+  
     
     
     

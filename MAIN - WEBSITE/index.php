@@ -243,7 +243,7 @@
                 <div class="col-md-6 col-lg-6 col-xl-6 item">
                     <div class="box"><img class="rounded-circle" src="assets/img/anwesha.jpg">
                         <h3 class="name">Anwesha Mitra</h3>
-                        <p class="title">Database Administrator</p>
+                        <p class="title">Documentarian</p>
                         <p class="description"></p>
                         <div class="social"><a href="https://m.facebook.com/anwesha.mitra.712"><i class="fa fa-facebook-official"></i></a><!--a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a--></div>
                     </div>
