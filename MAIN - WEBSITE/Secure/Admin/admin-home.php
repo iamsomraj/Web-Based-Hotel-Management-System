@@ -5,6 +5,11 @@
         
             if($_SESSION['isformfill'] == 2 || $_SESSION['isformfill'] == 1 )
             {
+                
+         include("connection.php");
+                $count=mysqli_num_rows(mysqli_query($link,"select * from booking"));
+             $sql="Select * from `booking`";       
+
 ?>
 
 <!DOCTYPE html>
@@ -79,28 +84,28 @@
             <div class="row features">
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-edit icon"></i>
                     <h1 class="text-capitalize name">Booking</h1>
-                    <p class="lead text-capitalize">You have received new bookings! Check booking!</p>
+                    <p class="lead text-capitalize">You have received   <?php echo $count; ?> bookings! <a href="admin-booking.php">Check booking!</a></p>
                 </div>
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-clock-o icon"></i>
                     <h3 class="name">History</h3>
-                    <p class="lead text-capitalize">Want to know about previous bookings? check History!</p>
+                    <p class="lead text-capitalize">Want to know about previous bookings?<a href="admin-history.php"> check History!</a></p>
                     <div class="btn-group" role="group"></div>
                 </div>
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-list-alt icon"></i>
                     <h3 class="name">Rooms</h3>
-                    <p class="lead text-capitalize">Want to know about occupancy of rooms? check Rooms!</p>
+                    <p class="lead text-capitalize">Want to know about occupancy of rooms? <a href="admin-rooms.php">check Rooms!</a></p>
                 </div>
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-rupee icon"></i>
                     <h3 class="name">Finance</h3>
-                    <p class="lead text-capitalize">Want to know about economic status? check Finance!</p>
+                    <p class="lead text-capitalize">Want to know about economic status?<a href="admin-finance.php">check Finance!</a></p>
                 </div>
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-pencil icon"></i>
                     <h3 class="name">Reservation</h3>
-                    <p class="lead text-capitalize">For Bookings from the admin panel! Go to reservation!</p>
+                    <p class="lead text-capitalize">For Bookings from the admin panel!<a href="prebook.php"> Go to reservation!</a></p>
                 </div>
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-user icon"></i>
                     <h3 class="name">Admins</h3>
-                    <p class="lead text-capitalize">Want to manage the admin control and access? Visit Admins!</p>
+                    <p class="lead text-capitalize">Want to manage the admin control and access?<a href="admin-admin.php"> Visit Admins!</a></p>
                 </div>
             </div>
         </div>
