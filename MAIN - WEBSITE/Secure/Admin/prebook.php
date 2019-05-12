@@ -4,6 +4,15 @@
     {
     $_SESSION["isformfill"]=1;
     $name=$email=$contact=$address=$roomtype=$checkin=$checkout="";
+    $_SESSION["superiorcheck"]=1;
+    $_SESSION["deluxecheck"]=1;
+    $_SESSION["sdeluxecheck"]=1;
+    $_SESSION["savercheck"]=1;
+     $_SESSION["freesuperior"]=0;
+    $_SESSION["freedeluxe"]=0;
+    $_SESSION["freesdeluxe"]=0;
+    $_SESSION["freesaver"]=0;
+    
 
     if(isset($_POST['submit'])){
         $name=trim($_POST['name']);

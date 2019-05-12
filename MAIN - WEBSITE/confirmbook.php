@@ -133,7 +133,12 @@ var noofdays ="<?php echo $noofdays;?>";
 var price ="<?php echo $price;?>";
 var pay ="<?php echo $pay;?>";
 
+var pprice = "<?php echo $_SESSION['price'];?>"
+var taxone = Math.round(pprice*0.18);
+var taxtwo = Math.round(pprice*0.12);
     
+var apay = pprice - (taxone+taxtwo);
+ 
 var doc = new jsPDF();
 var line = 20;
 doc.setFont("times");
@@ -157,8 +162,7 @@ line = line + 10;
 doc.text('____________________________________________________', 20, line, null, null, 'left');
 line = line + 10;
 doc.setFont("times");
-doc.setFontStyle("italic");    
-    
+doc.setFontStyle("normal");
 doc.text(name, 20, line, null, null, 'left');
 line = line + 10;
     
@@ -188,8 +192,25 @@ line = line + 10;
     
 doc.text(pay, 20, line, null, null, 'left');
 line = line + 10;
-            
+    
+doc.text('_____________________________________', 200, line, null, null, 'right');
+line = line + 10; 
+doc.setFontStyle("bold")
+doc.text("\t\t\tPrice Breakdown", 200, line, null, null, 'right');
+doc.setFontStyle("normal")
+line = line + 10;
+doc.text("Hotel Lodging and Service Included Cost :\t"+apay, 200, line, null, null, 'right');
+line = line + 10;    
+doc.text("Consumer Good Service Tax :\t"+taxone, 200, line, null, null, 'right');
+line = line + 10; 
+doc.text("State Good Service Tax :\t"+taxtwo, 200, line, null, null, 'right');
+line = line + 10;    
+doc.text("_____________________________________", 200, line, null, null, 'right');
+line = line + 10;
+doc.text("Maximum Retail Price :\t"+pprice, 200, line, null, null, 'right');
+line = line + 10;           
 doc.save();
+    
 </script>
     
 <div class="footer-dark">
