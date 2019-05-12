@@ -101,7 +101,7 @@
 
                             {
                             
-                            echo "<div class=\"alert alert-danger\" role=\"alert\">Wrong Email and Password Entered!</div>"; 
+                            echo "<div class=\"alert alert-danger\" role=\"alert\">Wrong Email Or Password Entered!</div>"; 
                             }
                         
                         
