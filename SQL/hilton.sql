@@ -94,6 +94,34 @@ INSERT INTO `confirmbooking` (`id`, `name`, `email`, `contact`, `address`, `room
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `completebooking`
+--
+
+CREATE TABLE `completebooking` (
+  `id` int(11) NOT NULL,
+  `name` longtext NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `contact` bigint(20) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `roomtype` longtext NOT NULL,
+  `checkin` date NOT NULL,
+  `checkout` date NOT NULL,
+  `noofdays` bigint(20) NOT NULL,
+  `payment` bigint(20) NOT NULL,
+  `paymethod` varchar(20) NOT NULL,
+  `customerid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `completebooking`
+--
+ALTER TABLE `completebooking`
+  ADD PRIMARY KEY (`id`);
+
 -- Table structure for table `room`
 --
 
@@ -113,6 +141,7 @@ INSERT INTO `room` (`id`, `roomtype`, `total`, `vacant`) VALUES
 (2, 'Deluxe', 5, 5),
 (3, 'Saver', 5, 5),
 (4, 'Semi Deluxe', 5, 5);
+
 
 --
 -- Indexes for dumped tables
@@ -170,6 +199,12 @@ ALTER TABLE `confirmbooking`
 ALTER TABLE `room`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
+-- AUTO_INCREMENT for table `completebooking`
+--
+ALTER TABLE `completebooking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
