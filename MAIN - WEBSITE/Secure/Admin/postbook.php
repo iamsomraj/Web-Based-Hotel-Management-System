@@ -46,13 +46,13 @@
                 
         
             if($noofdays == 0) {
-                    $error ="Error : Invalid date!";
+                    $error ="Error : You Cannot Have A Booking For Less Than A Day!";
                     $noofdays="INVALID";
                     $price="INVALID";
                     $flag=1;
             }
              elseif($noofmonths > 0){
-                $error="Error : Invalid Month!";
+                $error="Error : You Cannot Have A Booking For More Than A Month!";
                 $noofdays="INVALID";
                 $price="INVALID";
                 $flag=1;
@@ -223,10 +223,10 @@
             <div class="form-group">
                 <div class="card">
                     <div class="card-header">
-                        <h1 class="text-center mb-0">Booking Second</h1>
+                        <h1 class="text-center mb-0">Confirm Booking</h1>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        <p class="card-text">The Best Value Under The Sun!</p>
                     </div>
                 </div>
             </div>
