@@ -61,7 +61,7 @@ if(isset($_SESSION["isformfill"]))
 
 
 
-<body style="background-color:#fcf3c1;" data-spy="scroll" data-target="#navbar-e" data-offset="300">
+<body data-spy="scroll" data-target="#navbar-e" data-offset="300">
 <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light" style="background-color:#ffffff;">
         <div class="container-fluid"><a class="navbar-brand" href="#">Admin Panel</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
