@@ -46,12 +46,13 @@
 </head>
 
 <body>
-<nav class="navbar navbar-light navbar-expand-md sticky-top bg-light" style="background-color:#ffffff;">
+    <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light" style="background-color:#ffffff;">
         <div class="container-fluid"><a class="navbar-brand" href="#">Admin Panel</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-2">
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-home.php">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-search.php">Search</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-booking.php">Booking</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-history.php">History</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-rooms.php">Rooms</a></li>

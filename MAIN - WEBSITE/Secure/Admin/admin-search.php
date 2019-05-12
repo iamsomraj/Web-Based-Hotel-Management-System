@@ -61,138 +61,52 @@
                 </ul><button class="btn btn-primary ml-auto" type="submit"><a href="logout.php">Log Out</a></button></div>
         </div>
     </nav>
-    <div class="container">
-       </br>
-        <div class="display-4 text-center text-capitalize">Existing Administrators</div>
-        </br>
-        
-         <?php
-            if(isset($_GET["ustatus"]))
-            {
-                if($_GET["ustatus"] == 1)
-                {
-                    echo  "<p class=\"alert alert-success text-center text-capitalize\">Admin Username and Password updation is successful!</p>";
-                }
-                else if($_GET["ustatus"] == 2)
-                {
-                    echo  "<p class=\"alert alert-success text-center text-capitalize\">Admin Username and Password deletion is successful!</p>";
-                }
-                else
-                {
-                    echo  "<p class=\"alert alert-danger text-center text-capitalize\">Admin Username and Password Modification is not successful!</p>";
-                }
-                
-                
-            }
-            
-        ?>
     
-    
-
-        </br>
-    <?php
-             include("connection.php");
-             $sql="Select * from admin";
-             $result=mysqli_query($link,$sql);
-    ?>
-     
-                  
-              
-    
-      
-             
-         <table class="table table-striped table-dark">
-          <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">User Name</th>
-                <th scope="col">Password</th>
-                <th scope="col">Action</th>
-
+    <div class="container container-sm">
         
-            </tr>
-          </thead>
-             
-					
-          <tbody>
-              <?php
-              
-              while($row=mysqli_fetch_array($result))
-              {
-                  
-                $id=$row['id'];
-                $user=$row['user'];
-                $pass=$row['pass'];
-            ?>
-             
-                <tr>
-                <form method="post" action="adminupdate.php">
-                <td><input type="text" name="id" readonly value="<?php echo $id; ?>"></td>
-                <td><input type="text" name="username" value="<?php echo $user; ?>"></td>
-                <td><input type="password" name="password" value="<?php echo $pass; ?>"></td>
-                <td><button class="btn btn-primary" type="submit" name="updateadmin" value="Update">Update</button></td>
-                <td><button class="btn btn-danger" type="submit" name="deleteadmin" value="Delete">Delete</button></td>
-				</form>							
-                
-                
-            </tr> 
-              <?php
-              }
-              ?>
-              
-
-          </tbody>
-        </table>
-
-       </br>       </br>       </br>
-        <p class="display-4 text-dark text-center text-capitalize">Add New Administrator</p>
         </br>
-       <?php
-            if(isset($_GET["astatus"]))
-            {
-                if($_GET["astatus"] == 1)
-                {
-                    echo  "<p class=\"alert alert-success text-center text-capitalize\">New Admin Added successfully!</p>";
-                }
-                else
-                {
-                    echo  "<p class=\"alert alert-danger text-center text-capitalize\">New Admin addition is not successful!</p>";
-                }
-               $_GET["astatus"] = -99;
+        </br>
 
-            }
-        
+        <form class="form">
+
+            <div class="form-group">
+                    <p class="text text-left text-capitalize">Booking Table Search:</p>
+                    <input type="text" name="searchbook" id="searchbook" placeholder="Search Anything!" class="form-control">
+            </div>
             
+            <div class="form-group">
+                    <p class="text text-left text-capitalize">Confirm Table Search:</p>
+                    <input type="text" name="searchconbook" id="searchconbook" placeholder="Search Anything!" class="form-control">
+            </div>
             
-        ?>
-
-         <table class="table table-striped table-dark">
-          <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">User Name</th>
-                <th scope="col">Password</th>
-                <th scope="col">Action</th>
-            </tr>
-          </thead>
-
-
-            <tbody>
-                <tr>
-                <form method="post" action="adminadd.php">
-                <td><input type="text" name="id" readonly></td>
-                <td><input type="text" name="username" value="" placeholder="Username"></td>
-                <td><input type="password" name="password" value="" placeholder="Password"></td>
-                <td><button class="btn btn-primary" type="submit" name="addadmin" value="Add">Add</button></td>
-				</form>							
-                </tr> 
-            </tbody>
-        </table>
+            <div class="form-group">
+                    <p class="text text-left text-capitalize">Complete Table Search:</p>
+                    <input type="text" name="searchcombook" id="searchcombook" placeholder="Search Anything!" class="form-control">
+            </div>
   
+        
+        
+        </form>
     
-    
-    
+        </br>
+        </br>
+
+        </br>
+        </br>
+
+        </br>
+        </br>
+
     </div>
+
+
+    <div id="result"></div>
+    
+    
+    
+    
+    
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/DashBoard-light-boostrap2.js"></script>
@@ -203,6 +117,96 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
     <script src="../assets/js/Sidebar-Menu.js"></script>
 </body>
+
+
+<script>
+$(document).ready(function(){
+	load_data();
+	function load_data(query,table)
+	{
+		$.ajax({
+			url:"fetchbook.php",
+			method:"post",
+			data:{query:query},
+			success:function(data)
+			{
+				$('#result').html(data);
+			}
+		});
+	}
+	
+	$('#searchbook').keyup(function(){
+		var search = $(this).val();
+		if(search != '')
+		{
+			load_data(search);
+		}
+		else
+		{
+			load_data();			
+		}
+	});
+});
+    
+    
+    
+$(document).ready(function(){
+	load_data();
+	function load_data(query,table)
+	{
+		$.ajax({
+			url:"fetchconbook.php",
+			method:"post",
+			data:{query:query},
+			success:function(data)
+			{
+				$('#result').html(data);
+			}
+		});
+	}
+	
+	$('#searchconbook').keyup(function(){
+		var search = $(this).val();
+		if(search != '')
+		{
+			load_data(search);
+		}
+		else
+		{
+			load_data();			
+		}
+	});
+});
+    
+
+$(document).ready(function(){
+	load_data();
+	function load_data(query,table)
+	{
+		$.ajax({
+			url:"fetchcombook.php",
+			method:"post",
+			data:{query:query},
+			success:function(data)
+			{
+				$('#result').html(data);
+			}
+		});
+	}
+	
+	$('#searchcombook').keyup(function(){
+		var search = $(this).val();
+		if(search != '')
+		{
+			load_data(search);
+		}
+		else
+		{
+			load_data();			
+		}
+	});
+});
+</script>
 
 </html>
 <?php

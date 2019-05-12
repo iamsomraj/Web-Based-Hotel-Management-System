@@ -43,6 +43,7 @@
                 id="navcol-2">
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-home.php">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin-search.php">Search</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-booking.php">Booking</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-history.php">History</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-rooms.php">Rooms</a></li>
