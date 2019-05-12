@@ -58,7 +58,7 @@
     
     
     
-    <div class="container">
+    <div class="container-fluid">
         
         </br>
         <div class="display-4 text-center text-capitalize">Bookings</div>
@@ -162,6 +162,7 @@
                 <th scope="col">Amount Payable</th>
                 <th scope="col">Payment Method</th>
                 <th scope="col">Customer-Booking ID</th>
+                <th scope="col">Action</th>
             </tr>
           </thead>
              
@@ -203,6 +204,11 @@
                 <td><?php echo $payment; ?></td>
                 <td><?php echo $paymethod; ?></td>
                 <td><?php echo $customerid; ?></td> 
+                 <th>
+                <div class="btn-btn-primary">
+                    <button type="button" class='btn btn-success bg-success btn-sm' role="button"><a class="text-white text-uppercase" href="checkout.php?id=<?php echo $id; ?>">Check Out</a></button>
+                     </div>
+                </th>
             </tr>
              
              

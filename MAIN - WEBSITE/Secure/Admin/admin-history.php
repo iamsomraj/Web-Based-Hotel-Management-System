@@ -63,45 +63,91 @@
     </nav>
     
     
- <div class="container">
+ <div class="container-fluid">
         
                </br>
-        <div class="display-4 text-center text-capitalize">Booking History</div>
+         <div class="display-4 text-center text-capitalize">Booking History</div>
         </br>
+
+          
          <table class="table table-striped table-dark">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+                <th scope="col">Id</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Email Address</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">Home Town/City</th>
+                <th scope="col">Room Type</th>
+                <th scope="col">Check In</th>
+                <th scope="col">Check Out</th>
+                <th scope="col">No.of Days</th>
+                <th scope="col">Amount Payable</th>
+                <th scope="col">Payment Method</th>
+                <th scope="col">Customer-Booking ID</th>
+                <th scope="col">Action</th>
             </tr>
           </thead>
-          <tbody>
+             
+            <?php
+             include("connection.php");
+             $sql="Select * from completebooking";
+             $result=mysqli_query($link,$sql);
+            ?>
+             
+            <?php
+              
+              while($row=mysqli_fetch_array($result))
+              {
+                  
+                $id=$row['id'];
+                $name=$row['name'];
+                $email=$row['email'];
+                $contact=$row['contact'];
+                $address=$row['address'];
+                $roomtype=$row['roomtype'];
+                $checkin=$row['checkin'];
+                $checkout=$row['checkout'];
+                $noofdays=$row['noofdays'];
+                $payment=$row['payment']; 
+                $paymethod=$row['paymethod'];
+                $customerid = $row["customerid"];
+            ?>
+             
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+                <th scope="row"><?php echo $id; ?></th>
+                <td><?php echo $name; ?></td>
+                <td><?php echo $email; ?></td>
+                <td><?php echo $contact; ?></td>
+                <td><?php echo $address; ?></td>
+                <td><?php echo $roomtype; ?></td>
+                <td><?php echo $checkin; ?></td>
+                <td><?php echo $checkout; ?></td>
+                <td><?php echo $noofdays; ?></td>
+                <td><?php echo $payment; ?></td>
+                <td><?php echo $paymethod; ?></td>
+                <td><?php echo $customerid; ?></td> 
+                 <th>
+                <div class="btn-btn-primary">
+                    <button type="button" class='btn btn-success bg-success btn-sm' role="button"><a class="text-white text-uppercase" href="#">Invoice</a></button>
+                     </div>
+                </th>
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>        
-    
-  
+             
+             
+            <?php } ?>
 
-    </div>    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+          </tbody>
+        </table>
+
+
+
+
+    </div>
+
+    
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/DashBoard-light-boostrap2.js"></script>
     <script src="../assets/js/DashBoard-light-boostrap.js"></script>
