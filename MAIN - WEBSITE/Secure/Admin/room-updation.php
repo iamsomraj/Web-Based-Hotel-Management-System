@@ -34,7 +34,7 @@ else if($_SESSION["sdeluxecheck"]==0)
 {
     include("connection.php");
     $vacant=$_SESSION["freesdeluxe"];
-    $sql="UPDATE room SET vacant=\"$vacant\" where id=\"4\"";
+    $sql="UPDATE room SET vacant=\"$vacant\" where id=\"3\"";
     $result=mysqli_query($link,$sql);
     if($result)
     {
@@ -49,7 +49,7 @@ else if($_SESSION["savercheck"]==0)
 {
     include("connection.php");
     $vacant=$_SESSION["freesaver"];
-    $sql="UPDATE room SET vacant=\"$vacant\" where id=\"3\"";
+    $sql="UPDATE room SET vacant=\"$vacant\" where id=\"4\"";
     $result=mysqli_query($link,$sql);
     if($result)
     {

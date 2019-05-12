@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2019 at 03:16 PM
+-- Generation Time: May 12, 2019 at 04:29 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -123,8 +123,8 @@ CREATE TABLE `room` (
 INSERT INTO `room` (`id`, `roomtype`, `total`, `vacant`) VALUES
 (1, 'Superior', 5, 5),
 (2, 'Deluxe', 5, 5),
-(3, 'Saver', 5, 5),
-(4, 'Semi Deluxe', 5, 5);
+(3, 'Semi Deluxe', 5, 5),
+(4, 'Saver', 5, 5);
 
 --
 -- Indexes for dumped tables
@@ -174,7 +174,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `completebooking`
