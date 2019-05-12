@@ -128,7 +128,7 @@
                 <th>
                 <div class="btn-group-vertical">
                     <button type="button" class='btn btn-success bg-success btn-sm' role="button"><a class="text-white text-uppercase" href="bookingaccepted.php?id=<?php echo $id; ?>">Approve</a></button>
-                    <button type="button" class='btn btn-danger bg-danger btn-sm' role="button"><a  class="text-white text-uppercase" href="bookingrejected.php?id=<?php echo $id; ?>">Reject</a></button>                
+                    <button type="button" class='btn btn-danger bg-danger btn-sm' role="button"><a  class="text-white text-uppercase" href="bookingrejected.php?id=<?php echo $id; ?>&roomtype=<?php echo $roomtype?>">Reject</a></button>                
                 </div>	
                 </th>
 												
