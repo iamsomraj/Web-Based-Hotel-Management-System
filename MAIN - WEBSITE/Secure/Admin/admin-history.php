@@ -129,7 +129,7 @@
                 <td><?php echo $customerid; ?></td> 
                  <th>
                 <div class="btn-btn-primary">
-                    <button type="button" class='btn btn-success bg-success btn-sm' role="button"><a class="text-white text-uppercase" href="makeinvoice.php?id=<?php echo $id;?>"  >Invoice</a></button>
+                    <button type="button" class='btn btn-success bg-success btn-sm' role="button"><a class="text-white text-uppercase" href="makeinvoice.php?id=<?php echo $customerid;?>"  >Invoice</a></button>
                      </div>
                 </th>
             </tr>
