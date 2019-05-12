@@ -129,7 +129,7 @@
                 <td><?php echo $customerid; ?></td> 
                  <th>
                 <div class="btn-btn-primary">
-                    <button type="button" class='btn btn-success bg-success btn-sm' role="button"><a class="text-white text-uppercase" href="#">Invoice</a></button>
+                    <button type="button" class='btn btn-success bg-success btn-sm' role="button"><a class="text-white text-uppercase" href="makeinvoice.php?id=<?php echo $id;?>"  >Invoice</a></button>
                      </div>
                 </th>
             </tr>
@@ -147,7 +147,7 @@
     </div>
 
     
-           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/DashBoard-light-boostrap2.js"></script>
     <script src="../assets/js/DashBoard-light-boostrap.js"></script>
