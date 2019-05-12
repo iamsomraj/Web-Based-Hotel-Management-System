@@ -137,8 +137,6 @@
                 
                     $error="Error : No Semi Deluxe Room Available!";  
                     $code=17;
-                    //$_SESSION["sdeluxecheck"]=0;
-                    //$_SESSION["freesdeluxe"]--;
              }
             else if($roomtype=="Saver" && $_SESSION["freesaver"]<=0)
             {

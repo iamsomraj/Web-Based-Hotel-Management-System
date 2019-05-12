@@ -77,6 +77,28 @@
             $price=5500 * $noofdays;
         }
     }
+    ?>
+<?php
+                include("connection.php");
+                $sql="select * from room where id=\"1\"";
+                $result=mysqli_query($link,$sql);
+                $row=mysqli_fetch_array($result);
+                $_SESSION["freesuperior"]=$row['vacant'];
+                $sql="select * from room where id=\"2\"";
+                $result=mysqli_query($link,$sql);
+                $row=mysqli_fetch_array($result);
+                $_SESSION["freedeluxe"]=$row['vacant'];
+                 $sql="select * from room where id=\"3\"";
+                $result=mysqli_query($link,$sql);
+                $row=mysqli_fetch_array($result);
+                $_SESSION["freesdeluxe"]=$row['vacant'];
+                $sql="select * from room where id=\"4\"";
+                $result=mysqli_query($link,$sql);
+                $row=mysqli_fetch_array($result);
+                $_SESSION["freesaver"]=$row['vacant'];
+    
+?>
+<?php
 
     if(isset($_POST['submit']) )
     {
@@ -96,6 +118,27 @@
              elseif($pay=="select"){
                 $error="Error : You Did Not Select Any Payment Method!";
                 $code=11;
+            }
+             else if($roomtype=="Superior" && $_SESSION["freesuperior"]<=0)
+            {
+                    $error="Error : No Superior Room Available!";  
+                    $code=15;
+            }
+            else if($roomtype=="Deluxe" && $_SESSION["freedeluxe"]<=0)
+            {
+                    $error="Error : No Deluxe Room Available!";  
+                    $code=16;
+            }
+             else if($roomtype=="Semi Deluxe" && $_SESSION["freesdeluxe"]<=0)
+            {
+                
+                    $error="Error : No Semi Deluxe Room Available!";  
+                    $code=17;
+             }
+            else if($roomtype=="Saver" && $_SESSION["freesaver"]<=0)
+            {
+                    $error="Error : No Saver Type Room Available!";  
+                    $code=18;
             }
         else
             {
