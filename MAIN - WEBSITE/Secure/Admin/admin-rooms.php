@@ -152,7 +152,7 @@
             for($j=0;$j<$totalarray[$i];$j++)
             {
                 $v = $vacantarray[$i];
-                if($i== 0) { $roomtypenew = "  Superior  "; } else if($i== 1) { $roomtypenew = "Semi Deluxe"; } else if($i== 2) { $roomtypenew = "   Deluxe   "; } else if($i== 3) { $roomtypenew = "   Saver    "; };
+                if($i== 0) { $roomtypenew = "  Superior  "; } else if($i== 2) { $roomtypenew = "Semi Deluxe"; } else if($i== 1) { $roomtypenew = "   Deluxe   "; } else if($i== 3) { $roomtypenew = "   Saver    "; };
                 if($j+1 <= $v)
                 {
                 echo "<td><div class=\"card\">
