@@ -56,7 +56,7 @@
     <?php
         
              include("connection.php");
-             $sql="Select * from confirmbooking";
+             $sql="Select * from completebooking";
              $result=mysqli_query($link,$sql);
               $labelstring = $sellingprice = $actualprice = $profit = "";
                 $tap = $tsp = $tp = 0; 
