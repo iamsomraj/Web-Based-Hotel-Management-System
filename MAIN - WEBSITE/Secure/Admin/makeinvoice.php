@@ -45,7 +45,7 @@ var roomtype = "<?php echo $roomtype?>";
 var checkin = "<?php echo $checkin?>";
 var checkout = "<?php echo $checkout?>";
 var noofdays = "<?php echo $noofdays?>";
-var payment = <?php echo $payment?>;
+var payment = "<?php echo $payment?>";
 var paymethod = "<?php echo $paymethod?>";
 var customerid = "<?php echo $customerid?>";
 

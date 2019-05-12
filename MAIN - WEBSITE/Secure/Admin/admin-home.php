@@ -67,7 +67,7 @@
         <div class="intro">
             </br>
             <h1 class="text-center">Dashboard</h1>
-            <p class="lead text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+            <p class="lead text-center">Welcome To The Admin Panel!</p>
         </div>
     </div>
     <div class="features-blue" style="margin:0;">

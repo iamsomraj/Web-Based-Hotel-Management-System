@@ -129,10 +129,10 @@
             <div class="form-group">
                 <div class="card">
                     <div class="card-header">
-                        <h1 class="text-center mb-0">Booking - First</h1>
+                        <h1 class="text-center mb-0">Room Booking</h1>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        <p class="card-text">Life's Better At Our Rooms!</p>
                     </div>
                 </div>
             </div>
