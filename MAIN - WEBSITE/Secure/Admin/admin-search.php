@@ -100,8 +100,19 @@
     </div>
 
 
-    <div id="result"></div>
+    <div id="resultbook"></div>
     
+        </br>
+        </br>
+    <div id="resultconbook"></div>
+
+        </br>
+        </br>
+    <div id="resultcombook"></div>
+
+        </br>
+        </br>
+
     
     
     
@@ -130,7 +141,7 @@ $(document).ready(function(){
 			data:{query:query},
 			success:function(data)
 			{
-				$('#result').html(data);
+				$('#resultbook').html(data);
 			}
 		});
 	}
@@ -160,7 +171,7 @@ $(document).ready(function(){
 			data:{query:query},
 			success:function(data)
 			{
-				$('#result').html(data);
+				$('#resultconbook').html(data);
 			}
 		});
 	}
@@ -189,7 +200,7 @@ $(document).ready(function(){
 			data:{query:query},
 			success:function(data)
 			{
-				$('#result').html(data);
+				$('#resultcombook').html(data);
 			}
 		});
 	}

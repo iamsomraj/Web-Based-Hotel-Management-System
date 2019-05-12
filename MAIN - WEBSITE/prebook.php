@@ -129,7 +129,7 @@
                         <h1 class="text-center mb-0">Room Booking</h1>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">Life's Better At Our Rooms!</p>
+                        <center><p class="card-text">Life's Better At Our Rooms!</p></center>
                     </div>
                 </div>
             </div>

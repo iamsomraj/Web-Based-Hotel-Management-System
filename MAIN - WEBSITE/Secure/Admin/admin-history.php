@@ -71,7 +71,7 @@
         </br>
 
           
-         <table class="table table-striped table-dark">
+         <table class="table table-responsive table-striped table-dark">
           <thead>
             <tr>
                 <th scope="col">Id</th>
