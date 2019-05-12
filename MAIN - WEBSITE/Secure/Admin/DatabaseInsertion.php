@@ -30,7 +30,36 @@ if(isset($_SESSION["isformfill"]))
     $id=null;
     include("connection.php");
         
-    $query="insert into booking values('$id','$name','$email','$contact','$address','$roomtype','$checkin','$checkout','$noofdays','$price','$pay')";
+        
+        
+    if($roomtype=="Superior" && $_SESSION["superiorcheck"]==1)
+    {
+        $_SESSION["freesuperior"]--;
+        $_SESSION["superiorcheck"]=0;
+        header("location:room-updation.php");
+    }
+    else if($roomtype=="Deluxe" && $_SESSION["deluxecheck"]==1)
+    {
+        $_SESSION["freedeluxe"]--;
+        $_SESSION["deluxecheck"]=0;
+        header("location:room-updation.php");
+    }
+    else if($roomtype=="Semi Deluxe" && $_SESSION["sdeluxecheck"]==1)
+    {
+        $_SESSION["freesdeluxe"]--;
+        $_SESSION["sdeluxecheck"]=0;
+        header("location:room-updation.php");
+    }
+    else if($roomtype=="Saver" && $_SESSION["savercheck"]==1)
+    {
+        $_SESSION["freesaver"]--;
+        $_SESSION["savercheck"]=0;
+        header("location:room-updation.php");
+    }
+        else
+        
+    {
+            $query="insert into booking values('$id','$name','$email','$contact','$address','$roomtype','$checkin','$checkout','$noofdays','$price','$pay')";
     $result=mysqli_query($link,$query);
     $databaselog = "";
     if($link)
@@ -58,6 +87,7 @@ if(isset($_SESSION["isformfill"]))
 
 
     }
+}
         
         
 ?>

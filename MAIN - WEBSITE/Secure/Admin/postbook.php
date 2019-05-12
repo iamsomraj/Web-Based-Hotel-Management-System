@@ -25,7 +25,7 @@
     $roomtype=$_SESSION['roomtype'];
     $checkin=$_SESSION['checkin'];
     $checkout=$_SESSION['checkout'];
-    
+   
 
                 
     function numberofdays ( $firstdate, $lastdate )
@@ -78,6 +78,28 @@
             $price=5500 * $noofdays;
         }
     }
+?>
+<?php
+                include("connection.php");
+                $sql="select * from room where id=\"1\"";
+                $result=mysqli_query($link,$sql);
+                $row=mysqli_fetch_array($result);
+                $_SESSION["freesuperior"]=$row['vacant'];
+                $sql="select * from room where id=\"2\"";
+                $result=mysqli_query($link,$sql);
+                $row=mysqli_fetch_array($result);
+                $_SESSION["freedeluxe"]=$row['vacant'];
+                 $sql="select * from room where id=\"3\"";
+                $result=mysqli_query($link,$sql);
+                $row=mysqli_fetch_array($result);
+                $_SESSION["freesdeluxe"]=$row['vacant'];
+                $sql="select * from room where id=\"4\"";
+                $result=mysqli_query($link,$sql);
+                $row=mysqli_fetch_array($result);
+                $_SESSION["freesaver"]=$row['vacant'];
+    
+?>
+<?php
                 
                 
                 
@@ -99,22 +121,46 @@
              elseif($pay=="select"){
                 $error="Error : You Did Not Select Any Payment Method!";
                 $code=11;
-            }
-        else
+             }
+            else if($roomtype=="Superior" && $_SESSION["freesuperior"]<=0)
             {
-                $_SESSION['name']=$name;
-                $_SESSION['email']=$email;
-                $_SESSION['contact']=$contact;
-                $_SESSION['address']=$address;
-                $_SESSION['roomtype']=$roomtype;
-                $_SESSION['checkin']=$checkin;
-                $_SESSION['checkout']=$checkout;
-                $_SESSION['noofdays']=$noofdays;
-                $_SESSION['price']=$price; 
-                $_SESSION['pay']=$pay;
-                $_SESSION["isformfill"]++;
-                header('location:DatabaseInsertion.php');
+                    $error="Error : No Superior Room Available!";  
+                    $code=15;
             }
+            else if($roomtype=="Deluxe" && $_SESSION["freedeluxe"]<=0)
+            {
+                    $error="Error : No Deluxe Room Available!";  
+                    $code=16;
+            }
+             else if($roomtype=="Semi Deluxe" && $_SESSION["freesdeluxe"]<=0)
+            {
+                
+                    $error="Error : No Semi Deluxe Room Available!";  
+                    $code=17;
+                    //$_SESSION["sdeluxecheck"]=0;
+                    //$_SESSION["freesdeluxe"]--;
+             }
+            else if($roomtype=="Saver" && $_SESSION["freesaver"]<=0)
+            {
+                    $error="Error : No Saver Type Room Available!";  
+                    $code=18;
+            }
+            else
+            {
+                    $_SESSION['name']=$name;
+                    $_SESSION['email']=$email;
+                    $_SESSION['contact']=$contact;
+                    $_SESSION['address']=$address;
+                    $_SESSION['roomtype']=$roomtype;
+                    $_SESSION['checkin']=$checkin;
+                    $_SESSION['checkout']=$checkout;
+                    $_SESSION['noofdays']=$noofdays;
+                    $_SESSION['price']=$price; 
+                    $_SESSION['pay']=$pay;
+                    $_SESSION["isformfill"]++;
+                    header('location:DatabaseInsertion.php');
+            }
+       
         }
 
    
