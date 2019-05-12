@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-rupee icon"></i>
                     <h3 class="name">Finance</h3>
-                    <p class="lead text-capitalize">Want to know about economic status?<a href="admin-finance.php">check Finance!</a></p>
+                    <p class="lead text-capitalize">Want to know about economic status? <a href="admin-finance.php">check Finance!</a></p>
                 </div>
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-pencil icon"></i>
                     <h3 class="name">Reservation</h3>
