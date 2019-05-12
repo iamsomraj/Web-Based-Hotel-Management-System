@@ -70,10 +70,15 @@
        </br>
         <div class="display-4 text-center text-capitalize">Rooms</div>
         </br>
-    <?php
+    <?php              
+
              include("connection.php");
              $sql="Select * from room";
              $result=mysqli_query($link,$sql);
+        
+        
+            $totalarray = array();
+            $vacantarray = array();
     ?>
      
                   
@@ -86,8 +91,8 @@
             <tr>
               <th scope="col">Id</th>
               <th scope="col">Room Type</th>
-              <th scope="col">Total rooms</th>
-              <th scope="col">vacant rooms</th>
+              <th scope="col">Total Rooms</th>
+              <th scope="col">Vacant Rooms</th>
             
             </tr>
           </thead>
@@ -95,14 +100,18 @@
 					
           <tbody>
               <?php
-              
+         $i = 0;
+
               while($row=mysqli_fetch_array($result))
               {
-                  
                 $id=$row['id'];
                 $roomtype=$row['roomtype'];
                 $total=$row['total'];
                 $vacant=$row['vacant'];
+                $totalarray[$i] = $total;
+                $vacantarray[$i] = $vacant;
+                $i += 1;
+
             ?>
              
                 <tr>
@@ -121,13 +130,70 @@
             </tr> 
               <?php
               }
+        
+        
               ?>
               
           </tbody>
         </table>        
     </div>
-    
-    
+          
+    <div class="container">
+       
+    <p class="display-4 text-center text-dark text-capitalize">Room Status</p>
+ 
+        <table class="table">
+
+            <?php 
+        $roomtypenew = "";
+        for($i=0;$i<4;$i++)
+        {
+            echo "<tr>";
+            for($j=0;$j<$totalarray[$i];$j++)
+            {
+                $v = $vacantarray[$i];
+                if($i== 0) { $roomtypenew = "  Superior  "; } else if($i== 1) { $roomtypenew = "Semi Deluxe"; } else if($i== 2) { $roomtypenew = "   Deluxe   "; } else if($i== 3) { $roomtypenew = "   Saver    "; };
+                if($j+1 <= $v)
+                {
+                echo "<td><div class=\"card\">
+                    <div class=\"card-header\">
+                        <p class=\"text-dark text-center\">
+                            $roomtypenew
+                        </p>
+                    </div>
+                    <div class=\"card-body\">
+                        <p class=\"card-text text-center text-success\">
+                            Vacant
+                        </p>
+                    </div>
+                </div></td>";
+                    
+                }
+                else
+                {
+                      echo "<td><div class=\"card card-sm\">
+                                <div class=\"card-header\">
+                                    <p class=\"text-dark text-center\">
+                                        $roomtypenew
+                                    </p>
+                                </div>
+                                <div class=\"card-body\">
+                                    <p class=\"card-text text-center text-danger\">
+                                        Occupied
+                                    </p>
+                                </div>
+                            </div></td>";                
+                
+                }
+            }
+            echo "</tr>";
+        }
+        
+        
+    ?>
+        </table>
+    </div>
+
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
