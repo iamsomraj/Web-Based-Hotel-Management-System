@@ -227,7 +227,7 @@
                         <h1 class="text-center mb-0">Confirm Booking</h1>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">The Best Value Under The Sun!</p>
+                        <center><p class="card-text">The Best Value Under The Sun!</p></center>
                     </div>
                 </div>
             </div>
