@@ -207,7 +207,8 @@
                 <td><?php echo $customerid; ?></td> 
                  <th>
                 <div class="btn-btn-primary">
-                    <button type="button" class='btn btn-success bg-success btn-sm' role="button"><a class="text-white text-uppercase" href="checkout.php?id=<?php echo $id; ?>">Check Out</a></button>
+                     <button type="button" class='btn btn-success bg-success btn-sm' role="button"><a  class="text-white text-uppercase" href="checkout.php?id=<?php echo $id; ?>&roomtype=<?php echo $roomtype?>">Check Out</a></button>    
+                    
                      </div>
                 </th>
             </tr>
