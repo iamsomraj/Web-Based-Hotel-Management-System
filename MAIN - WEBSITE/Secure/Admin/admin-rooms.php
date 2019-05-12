@@ -66,7 +66,6 @@
     
     
     
-    <div class="container">
        </br>
         <div class="display-4 text-center text-capitalize">Rooms</div>
         </br>
@@ -84,16 +83,14 @@
                   
               
     
-      
-             
-         <table class="table table-responsive table-striped table-dark">
+      <div class="container">
+         <table class="table table-striped table-dark ">
           <thead>
             <tr>
               <th scope="col">Id</th>
               <th scope="col">Room Type</th>
               <th scope="col">Total Rooms</th>
               <th scope="col">Vacant Rooms</th>
-            
             </tr>
           </thead>
              
@@ -118,31 +115,24 @@
                 <th scope="row"><?php echo $id; ?></th>
                 <td><?php echo $roomtype; ?></td>
                 <td><?php echo $total; ?></td>
-                <td><?php echo $vacant; ?></td>
-                
-                    
-                
-                
-            
-												
-                
-                
+                <td><?php echo $vacant; ?></td>        
             </tr> 
               <?php
               }
-        
-        
               ?>
               
           </tbody>
-        </table>        
-    </div>
+    </table>     
+
+        </div>
+             
+   
           
     <div class="container">
        
     <p class="display-4 text-center text-dark text-capitalize">Room Status</p>
  
-        <table class="table table-responsive">
+        <table class="table">
 
             <?php 
         $roomtypenew = "";
