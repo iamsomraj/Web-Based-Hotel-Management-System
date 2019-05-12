@@ -89,11 +89,11 @@
                 $result=mysqli_query($link,$sql);
                 $row=mysqli_fetch_array($result);
                 $_SESSION["freedeluxe"]=$row['vacant'];
-                 $sql="select * from room where id=\"3\"";
+                 $sql="select * from room where id=\"4\"";
                 $result=mysqli_query($link,$sql);
                 $row=mysqli_fetch_array($result);
                 $_SESSION["freesdeluxe"]=$row['vacant'];
-                $sql="select * from room where id=\"4\"";
+                $sql="select * from room where id=\"3\"";
                 $result=mysqli_query($link,$sql);
                 $row=mysqli_fetch_array($result);
                 $_SESSION["freesaver"]=$row['vacant'];
