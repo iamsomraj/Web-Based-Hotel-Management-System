@@ -30,7 +30,7 @@ if($result)
     $output .= '<p class="display-4 text-center text-capitalize text-dark">Confirm Booking Table<p>';
 
 	$output .= '<div class="table-responsive">
-					<table class="table table bordered">
+					<table class="table table bordered table-dark table-striped">
 						<tr>
                           <th scope="col">Id</th>
                           <th scope="col">Full Name</th>
