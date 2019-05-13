@@ -65,7 +65,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-finance.php">Finance</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="prebook.php">Reservation</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-admin.php">Admins</a></li>
-                </ul><button class="btn btn-primary ml-auto" type="submit"><a href="logout.php">Log Out</a></button></div>
+                </ul><button class="btn btn-primary rounded ml-auto" type="submit"><a href="logout.php">Log Out</a></button></div>
         </div>
     </nav>
     
@@ -73,7 +73,7 @@
         <div class="intro">
             </br>
             <h1 class="text-center">Dashboard</h1>
-            <p class="lead text-center">Welcome To The Admin Panel!</p>
+            <p class="lead text-center text-capitalize">From booking for our clients to acquiring details about Hilton's finance, everything you will need is here under one umbrella!</p>
         </div>
     </div>
     <div class="features-blue" style="margin:0;">
@@ -83,28 +83,28 @@
             </div>
             <div class="row features">
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-edit icon"></i>
-                    <h1 class="text-capitalize name">Booking</h1>
-                    <p class="lead text-capitalize">You have received   <?php echo $count; ?> bookings! <a href="admin-booking.php">Check booking!</a></p>
+                    <h1 class="text-capitalize name"><a href="admin-booking.php">Booking</a></h1>
+                    <p class="lead text-capitalize">You have received  <?php echo $count; ?> bookings! <a href="admin-booking.php">Check booking!</a></p>
                 </div>
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-clock-o icon"></i>
-                    <h3 class="name">History</h3>
+                    <h3 class="name"><a href="admin-history.php">History</a></h3>
                     <p class="lead text-capitalize">Want to know about previous bookings?<a href="admin-history.php"> check History!</a></p>
                     <div class="btn-group" role="group"></div>
                 </div>
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-list-alt icon"></i>
-                    <h3 class="name">Rooms</h3>
+                    <h3 class="name"><a href="admin-rooms.php">Rooms</a></h3>
                     <p class="lead text-capitalize">Want to know about occupancy of rooms? <a href="admin-rooms.php">check Rooms!</a></p>
                 </div>
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-rupee icon"></i>
-                    <h3 class="name">Finance</h3>
+                    <h3 class="name"><a href="admin-finance.php">Finance</a></h3>
                     <p class="lead text-capitalize">Want to know about economic status? <a href="admin-finance.php">check Finance!</a></p>
                 </div>
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-pencil icon"></i>
-                    <h3 class="name">Reservation</h3>
+                    <h3 class="name"><a href="prebook.php">Reservation</a></h3>
                     <p class="lead text-capitalize">For Bookings from the admin panel!<a href="prebook.php"> Go to reservation!</a></p>
                 </div>
                 <div class="col-sm-6 col-md-4 item"><i class="fa fa-user icon"></i>
-                    <h3 class="name">Admins</h3>
+                    <h3 class="name"><a href="admin-admin.php">Admins</a></h3>
                     <p class="lead text-capitalize">Want to manage the admin control and access?<a href="admin-admin.php"> Visit Admins!</a></p>
                 </div>
             </div>

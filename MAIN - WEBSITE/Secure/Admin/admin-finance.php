@@ -50,7 +50,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-finance.php">Finance</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="prebook.php">Reservation</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin-admin.php">Admins</a></li>
-                </ul><button class="btn btn-primary ml-auto" type="submit"><a href="logout.php">Log Out</a></button></div>
+                </ul><button class="btn btn-primary rounded ml-auto" type="submit"><a href="logout.php">Log Out</a></button></div>
         </div>
     </nav>
 
