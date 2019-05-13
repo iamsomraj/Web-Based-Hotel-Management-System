@@ -1,0 +1,53 @@
+div.jumbotron.carousel-hero {
+  color:#fff;
+  text-align:center;
+  background-size:cover;
+  background-position:center;
+  padding-top:100px;
+  padding-bottom:100px;
+  margin-bottom:0;
+}
+
+
+
+
+div.jumbotron.hero-nature {
+  background-image:url('../../assets/img/actual/imageone.jpg');
+}
+
+div.jumbotron.hero-photography {
+  background-image:url('../../assets/img/actual/imagetwo.jpg');
+}
+
+div.jumbotron.hero-technology {
+  background-image:url('../../assets/img/actual/imagethree.jpg');
+}
+
+
+
+div.jumbotron.hero-four {
+  background-image:url('../../assets/img/actual/imagefour.jpg');
+}
+
+
+
+div.jumbotron.hero-five {
+  background-image:url('../../assets/img/actual/imagefive.jpg');
+}
+
+
+
+
+
+h1.hero-title, h2.hero-title, h3.hero-title {
+  text-shadow:0 3px 3px rgba(0,0,0,0.4);
+  color:#fff;
+}
+
+p.hero-subtitle {
+  max-width:600px;
+  margin:25px auto;
+  padding:10px 15px;
+  color:#fff;
+}
+

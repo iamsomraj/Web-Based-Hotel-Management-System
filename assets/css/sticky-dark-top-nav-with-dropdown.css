@@ -1,0 +1,190 @@
+.navigation-clean-button {
+  background:#222222;
+  padding-top:10px;
+  padding-bottom:10px;
+  color:#f2f5f8;
+  border-radius:0;
+  box-shadow:none;
+  border:none;
+  margin-bottom:0;
+}
+
+@media (max-width:767px) {
+  .navigation-clean-button {
+    padding-top:0;
+    padding-bottom:0;
+  }
+}
+
+@media (max-width:767px) {
+  .navigation-clean-button .navbar-header {
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+}
+
+@media (max-width:767px) {
+  .navigation-clean-button .navbar-right {
+    margin-bottom:20px;
+  }
+}
+
+.navigation-clean-button .navbar-brand {
+  font-weight:bold;
+  color:inherit;
+}
+
+.navigation-clean-button .navbar-brand:hover {
+  color:#1485ee;
+}
+
+.navigation-clean-button .navbar-brand img {
+  height:100%;
+  display:inline-block;
+  margin-right:10px;
+  width:auto;
+}
+
+.navigation-clean-button .navbar-toggle {
+  border-color:#ddd;
+}
+
+.navigation-clean-button .navbar-toggle:hover, .navigation-clean-button .navbar-toggle:focus {
+  background:none;
+}
+
+.navigation-clean-button .navbar-toggle .icon-bar {
+  background-color:#888;
+}
+
+.navigation-clean-button .navbar-collapse, .navigation-clean-button .navbar-form {
+  border-top-color:#ddd;
+}
+
+.navigation-clean-button .navbar-nav > .active > a, .navigation-clean-button .navbar-nav > .open > a {
+  background:none;
+  box-shadow:none;
+}
+
+.navigation-clean-button.navbar-default .navbar-nav > .active > a, .navigation-clean-button.navbar-default .navbar-nav > .active > a:focus, .navigation-clean-button.navbar-default .navbar-nav > .active > a:hover {
+  color:#e04c40;
+  border-top:1px solid #e04c40;
+  box-shadow:none;
+  transition:background-color 0.25s;
+  background:none;
+  pointer-events:none;
+}
+
+.navigation-clean-button.navbar .navbar-nav > li > a {
+  padding-left:18px;
+  padding-right:18px;
+}
+
+.navigation-clean-button.navbar-default .navbar-nav > li > a {
+  color:#dfe8ee;
+  font-weight:400;
+  text-transform:uppercase;
+  font-family:'Work Sans';
+}
+
+.navigation-clean-button.navbar-default .navbar-nav > li > a:focus, .navigation-clean-button.navbar-default .navbar-nav > li > a:hover {
+  color:#e04c40 !important;
+  border-top:solid 1px #e04c40;
+  background-color:transparent;
+  transition:background 0.2s ease,
+              padding 0.8s linear;
+  transition:background-color 0.25s;
+}
+
+.navigation-clean-button .navbar-nav > li > .dropdown-menu {
+  margin-top:-5px;
+  box-shadow:0 4px 8px rgba(0,0,0,.1);
+  background-color:#222222;
+  border-radius:2px;
+}
+
+.navigation-clean-button .dropdown-menu > li > a:focus, .navigation-clean-button .dropdown-menu > li > a {
+  line-height:2;
+  font-size:14px;
+  font-weight:300;
+  font-family:'Roboto';
+  color:#df4c40;
+}
+
+.navigation-clean-button .dropdown-menu > li > a:focus, .navigation-clean-button .dropdown-menu > li > a:hover {
+  background:#df4c40;
+  color:inherit;
+  transition:background-color 0.25s;
+  transition-timing-function:ease;
+  transition-timing-function:cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.navigation-clean-button .actions {
+  margin-top:7px;
+  margin-bottom:0;
+}
+
+.navigation-clean-button .actions .login {
+  margin-right:7px;
+  text-decoration:none;
+  color:#ffffff;
+}
+
+.navigation-clean-button .action-button, .navigation-clean-button .action-button:active {
+  background:transparent;
+  border-radius:0;
+  color:#e04c40;
+  box-shadow:none;
+  border:1px solid #e04c40;
+  text-shadow:none;
+  padding:10px 22px;
+  transition:background-color 0.25s;
+}
+
+.navigation-clean-button .action-button:hover {
+  background:#e04c40;
+  color:#fff;
+  font-weight:400;
+  border:1px solid #df4c40;
+}
+
+.navbar {
+  margin-bottom:0;
+}
+
+.btn {
+  border-radius:0;
+}
+
+a.navbar-brand.navbar-link {
+  font-weight:400;
+}
+
+p.navbar-text.navbar-right.actions {
+  font-family:'Roboto Slab';
+  text-transform:uppercase;
+  font-weight:400;
+}
+
+a.navbar-link.login:hover {
+  color:#e04c40;
+}
+
+.btn.focus, .btn:focus, .btn:hover {
+  color:#ffffff;
+  text-decoration:none;
+  background-color:#1485ee;
+  border:none;
+}
+
+.btn-default {
+  color:#ffffff;
+  background-color:#df4c40;
+  border:none;
+}
+
+.btn {
+  font-family:'Roboto';
+  font-weight:400;
+}
+
