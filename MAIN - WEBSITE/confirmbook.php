@@ -34,7 +34,7 @@ if(isset($_SESSION["isformfill"]))
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel</title>
+    <title>Enjoy Your Stay!</title>
     <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
