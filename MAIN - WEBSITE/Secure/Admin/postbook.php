@@ -240,7 +240,7 @@
                     <?php 
                     
                         
-                        if((isset(($_POST["submit"])) and isset($error)) || ($flag==1))
+                        if((isset(($_POST["submit"])) && isset($error)) || ($flag==1))
 
                             {
                             

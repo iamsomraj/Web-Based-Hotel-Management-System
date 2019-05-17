@@ -201,7 +201,7 @@
                         <p class="title">Owner of Creative Ltd.</p>
                     </div>
                 </div>
-            </div>
+            </div>+
         </div>
     </div>
     
