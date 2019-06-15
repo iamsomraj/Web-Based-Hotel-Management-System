@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2019 at 08:21 AM
+-- Generation Time: Jun 15, 2019 at 09:37 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -70,12 +70,12 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`id`, `name`, `email`, `contact`, `address`, `roomtype`, `checkin`, `checkout`, `noofdays`, `payment`, `paymethod`) VALUES
-(5, 'Anushka Ghosh', 'aaa@aaa.com', 9966542385, 'aaa town', 'Superior', '2019-06-15', '2019-06-30', 15, 217500, 'Pay Now'),
-(6, 'Biswajit Mukherjee', 'bbb@bbb.com', 9865451236, 'bbb town', 'Deluxe', '2019-06-16', '2019-06-30', 14, 147000, 'Pay Now'),
-(7, 'Somraj Mukherjee', 'ccc@ccc.com', 7856451236, 'ccc town', 'Saver', '2019-06-16', '2019-06-25', 9, 49500, 'Pay Now'),
-(14, 'Anwesha Mitra ', 'xxx@aaa.com', 9845632178, 'aaa town', 'Superior', '2019-06-15', '2019-06-30', 15, 217500, 'Pay Now'),
-(15, 'Jagriti Chourasia', 'yyy@bbb.com', 7865321469, 'bbb town', 'Deluxe', '2019-06-16', '2019-06-30', 14, 147000, 'Pay Now'),
-(16, 'Souradip Ganguly', 'zzz@ccc.com', 8563214756, 'ccc town', 'Saver', '2019-06-16', '2019-06-25', 9, 49500, 'Pay Now');
+(5, 'Anushka Ghosh', 'anushka@gmail.com', 9966542385, 'Kolkata', 'Superior', '2019-06-15', '2019-06-30', 15, 217500, 'Pay Now'),
+(6, 'Biswajit Mukherjee', 'biswa08@gmail.com', 9865451236, 'Howrah', 'Deluxe', '2019-06-16', '2019-06-30', 14, 147000, 'Pay Now'),
+(7, 'Somraj Mukherjee', 'iamsomraj@gmail.com', 7856451236, 'Sodepur', 'Saver', '2019-06-16', '2019-06-25', 9, 49500, 'Pay Now'),
+(14, 'Anwesha Mitra ', 'anwesha@gmail.com', 9845632178, 'Sinthi', 'Superior', '2019-06-15', '2019-06-30', 15, 217500, 'Pay Now'),
+(15, 'Jagriti Chourasia', 'jagriti47@gmail.com', 7865321469, 'Malda', 'Deluxe', '2019-06-16', '2019-06-30', 14, 147000, 'Pay Now'),
+(16, 'Souradip Ganguly', 'sourafcb@gmail.com', 8563214756, 'Bally', 'Saver', '2019-06-16', '2019-06-25', 9, 49500, 'Pay Now');
 
 -- --------------------------------------------------------
 
@@ -103,10 +103,10 @@ CREATE TABLE `completebooking` (
 --
 
 INSERT INTO `completebooking` (`id`, `name`, `email`, `contact`, `address`, `roomtype`, `checkin`, `checkout`, `noofdays`, `payment`, `paymethod`, `customerid`) VALUES
-(3, 'Rohan Dutta', 'gggg@gggg.com', 9845632147, 'gggg town', 'Semi Deluxe', '2019-06-29', '2019-07-26', 27, 202500, 'Pay Now', 6),
-(4, 'Monalisa Mondal', 'hhhh@hhh.com', 9756852642, 'hhh town', 'Deluxe', '2019-08-11', '2019-08-24', 13, 136500, 'Pay Later', 7),
-(5, 'Indrajit Bhattacharya', 'iiii@iiiii.com', 5698753122, 'iiii town', 'Deluxe', '2019-08-23', '2019-08-31', 8, 84000, 'Pay Later', 5),
-(6, 'Arka Chowdhury', 'ffff@ffff.com', 6587546321, 'ffff town', 'Superior', '2019-06-16', '2019-06-29', 13, 188500, 'Pay Later', 8);
+(3, 'Rohan Dutta', 'rohan@gmail.com', 9845632147, 'Airport', 'Semi Deluxe', '2019-06-29', '2019-07-26', 27, 202500, 'Pay Now', 6),
+(4, 'Monalisa Mondal', 'mona2013@gmail.com', 9756852642, 'Amta', 'Deluxe', '2019-08-11', '2019-08-24', 13, 136500, 'Pay Later', 7),
+(5, 'Indrajit Bhattacharya', 'indra@gmail.com', 5698753122, 'Maniktala', 'Deluxe', '2019-08-23', '2019-08-31', 8, 84000, 'Pay Later', 5),
+(6, 'Arka Chowdhury', 'arka@gmail.com', 6587546321, 'Khirpai', 'Superior', '2019-06-16', '2019-06-29', 13, 188500, 'Pay Later', 8);
 
 -- --------------------------------------------------------
 
@@ -134,8 +134,8 @@ CREATE TABLE `confirmbooking` (
 --
 
 INSERT INTO `confirmbooking` (`id`, `name`, `email`, `contact`, `address`, `roomtype`, `checkin`, `checkout`, `noofdays`, `payment`, `paymethod`, `customerid`) VALUES
-(9, 'Saptarshi Ghosh', 'eee@eee.com', 2564953612, 'eee town', 'Semi Deluxe', '2019-06-16', '2019-06-18', 2, 15000, 'Pay Now', 9),
-(10, 'Chandrim Niogy', 'dddd@ddd.com', 2364589612, 'ddd town', 'Semi Deluxe', '2019-07-19', '2019-07-31', 12, 90000, 'Pay Now', 8);
+(9, 'Saptarshi Ghosh', 'saptarshi@gmail.com', 2564953612, 'Dumdum', 'Semi Deluxe', '2019-06-16', '2019-06-18', 2, 15000, 'Pay Now', 9),
+(10, 'Chandrim Niogy', 'chiku@gmail.com', 2364589612, 'Shyamnagar', 'Semi Deluxe', '2019-07-19', '2019-07-31', 12, 90000, 'Pay Now', 8);
 
 -- --------------------------------------------------------
 
