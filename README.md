@@ -1,6 +1,6 @@
 # Web Based Hotel Management System
 
-This repository contains a very basic Web Based Hotel Management System , developed by a team of 3. This project is mainly developed in HTML , CSS and JavaScript. I used Bootstrap to create the frontend and the backend is developed in PHP.  The search requests in this system are implemented with the help of AJAX and the financial graphs are implemented using ChartJs.
+This repository contains a very basic Web Based Hotel Management System , developed by a team of 4. This project is mainly developed in HTML , CSS and JavaScript. I used Bootstrap to create the frontend and the backend is developed in PHP.  The search requests in this system are implemented with the help of AJAX and the financial graphs are implemented using ChartJs.
 
 ## Click Here
 
@@ -17,15 +17,17 @@ This repository contains a very basic Web Based Hotel Management System , develo
 5. Working with Session and Cookie
 6. Distinguishing between POST and GET method 
 
-## Developers
+## Collaborators
 
 LinkedIn : [iamsomraj](https://www.linkedin.com/in/iamsomraj/)
 
 HackerRank: [iamsomraj](https://www.hackerrank.com/iamsomraj?hr_r=1) 
 
-Souradip Ganguly
+[Souradip Ganguly](https://github.com/Souro08)
 
-Jagriti Chourasia
+[Jagriti Chourasia](https://github.com/jagriti47)
+
+[Anwesha Mitra](https://github.com/Anwesha1998)
 
 ## Show Your Support
 
