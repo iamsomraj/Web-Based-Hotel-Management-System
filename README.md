@@ -6,9 +6,7 @@ This repository contains a very basic Web Based Hotel Management System , develo
 
 [Click here](https://iamsomraj.github.io/Web-Based-Hotel-Management-System/) to see my project.
 
-Watch the informative video. ( As it was my first project, I went a bit creative 😜  )
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tPg7g6zsQhk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Watch](https://youtu.be/tPg7g6zsQhk) the informative video. ( As it was my first project, I went a bit creative 😜  )
 
 ## Objectives
 
