@@ -6,7 +6,9 @@ This repository contains a very basic Web Based Hotel Management System , develo
 
 [Click here](https://iamsomraj.github.io/Web-Based-Hotel-Management-System/) to see my project.
 
-[Click here](https://youtu.be/tPg7g6zsQhk) to watch the informative video. ( As it was my first project, I went a bit creative )
+Watch the informative video. ( As it was my first project, I went a bit creative 😜  )
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tPg7g6zsQhk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Objectives
 
@@ -19,9 +21,9 @@ This repository contains a very basic Web Based Hotel Management System , develo
 
 ## Collaborators
 
-LinkedIn : [iamsomraj](https://www.linkedin.com/in/iamsomraj/)
+LinkedIn : [iamsomraj](https://www.linkedin.com/in/iamsomraj/) 😊
 
-HackerRank: [iamsomraj](https://www.hackerrank.com/iamsomraj?hr_r=1) 
+HackerRank: [iamsomraj](https://www.hackerrank.com/iamsomraj?hr_r=1) 😊
 
 [Souradip Ganguly](https://github.com/Souro08)
 
@@ -31,14 +33,16 @@ HackerRank: [iamsomraj](https://www.hackerrank.com/iamsomraj?hr_r=1)
 
 ## Show Your Support
 
-Give me a star if this project helped you
+Give me a star ⭐
+
+if this project helped you 👦 👧
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. 🤝 For major changes, please open an issue first to discuss what you would like to change. 🙏
 
-Please make sure to update tests as appropriate.
+Please make sure to update tests as appropriate. ✌
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://choosealicense.com/licenses/mit/) 📰https://choosealicense.com/licenses/mit/)
